@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCCG S&P PARISH</title>
+</head>
+<body>
+  
+</body>
+</html>
+export default function ChurchWebsite() {
+  const events = [
+    {
+      title: 'Sunday Worship Service',
+      time: 'Every Sunday • 8:00 AM & 10:30 AM',
+      desc: 'Join us for powerful worship, inspiring messages, and fellowship.'
+    },
+    {
+      title: 'Bible Study',
+      time: 'Wednesday • 6:00 PM',
+      desc: 'Grow deeper in faith through interactive Bible teachings.'
+    },
+    {
+      title: 'Youth Fellowship',
+      time: 'Friday • 5:00 PM',
+      desc: 'A vibrant gathering for young people to connect and grow spiritually.'
+    }
+  ]
+
+  const ministries = [
+    'Children Ministry',
+    'Youth Ministry',
+    'Women Fellowship',
+    'Men Fellowship',
+    'Choir Ministry',
+    'Prayer Team'
+  ]
+
+  return
+    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+      {/* Hero Section */}
+      <section
+        className="relative h-[90vh] flex items-center justify-center text-center bg-cover bg-center overflow-hidden"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1600&auto=format&fit=crop')"
+        }
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="relative z-10 px-6 max-w-4xl text-white">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+            Welcome to The Redeemed Christian Church of God
+          </h1>
+
+          <p className="text-lg md:text-2xl text-gray-200 mb-8">
+            A place of worship, love, faith, and transformation.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-yellow-500 hover:bg-yellow-600 transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl">
+              Join Us This Sunday
+            </button>
+
+            <button className="border border-white hover:bg-white hover:text-black transition px-8 py-4 rounded-2xl text-lg font-semibold">
+              Watch Live
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-6 md:px-16 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?q=80&w=1200&auto=format&fit=crop"
+              alt="Church worship"
+              className="rounded-3xl shadow-2xl w-full h-[450px] object-cover"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-4xl font-bold mb-6">About Our Church</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              Grace Life Church is a Christ-centered community committed to sharing
+              God’s love, building strong faith, and transforming lives through
+              worship, prayer, and service.
+            </p>
+
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Whether you are visiting for the first time or looking for a church
+              family, you are welcome here.
+            </p>
+
+            <button className="bg-black text-white px-6 py-3 rounded-2xl hover:bg-gray-800 transition shadow-lg">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Times */}
+      <section className="py-20 px-6 md:px-16 bg-gray-100">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Service Times</h2>
+          <p className="text-gray-600 text-lg mb-12"> 
+            Worship with us and experience God’s presence.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {events.map((event, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition"
+              >
+                <h3 className="text-2xl font-semibold mb-4">{event.title}</h3>
+                <p className="text-yellow-600 font-medium mb-4">{event.time}</p>
+                <p className="text-gray-600 leading-relaxed">{event.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ministries */}
+      <section className="py-20 px-6 md:px-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold mb-4">Our Ministries</h2>
+            <p className="text-gray-600 text-lg">
+              Get connected and grow together in faith.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {ministries.map((ministry, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 rounded-3xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition"
+              >
+                <h3 className="text-xl font-semibold">{ministry}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pastor Section */}
+      <section className="py-20 px-6 md:px-16 bg-black text-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+              alt="Pastor"
+              className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-4xl font-bold mb-6">Meet Our Pastor</h2>
+            <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              Pastor Michael Johnson is passionate about teaching God’s Word,
+              raising disciples, and helping people discover their purpose in Christ.
+            </p>
+
+            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+              Through practical teachings and compassionate leadership, he continues
+              to impact lives and communities.
+            </p>
+
+            <button className="bg-yellow-500 hover:bg-yellow-600 transition px-6 py-3 rounded-2xl text-black font-semibold shadow-lg">
+              Read More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-6 md:px-16 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
+          <p className="text-gray-600 text-lg mb-12">
+            We would love to hear from you.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-gray-100 p-8 rounded-3xl shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Address</h3>
+              <p className="text-gray-600">
+                21 Faith Avenue, Lagos, Nigeria
+              </p>
+            </div>
+
+            <div className="bg-gray-100 p-8 rounded-3xl shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Phone</h3>
+              <p className="text-gray-600">+234 800 000 0000</p>
+            </div>
+
+            <div className="bg-gray-100 p-8 rounded-3xl shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Email</h3>
+              <p className="text-gray-600">info@gracelifechurch.com</p>
+            </div>
+          </div>
+
+          <form className="bg-gray-100 rounded-3xl p-8 shadow-lg text-left">
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="p-4 rounded-2xl border border-gray-300 outline-none focus:ring-2 focus:ring-yellow-500"
+              />
+
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="p-4 rounded-2xl border border-gray-300 outline-none focus:ring-2 focus:ring-yellow-500"
+              />
+            </div>
+
+            <textarea
+              placeholder="Your Message"
+              rows={6}
+              className="w-full p-4 rounded-2xl border border-gray-300 outline-none focus:ring-2 focus:ring-yellow-500 mb-6"
+            ></textarea>
+
+            <button className="bg-black text-white px-8 py-4 rounded-2xl hover:bg-gray-800 transition shadow-lg">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-8 px-6 text-center overflow-hidden">
+        <p className="text-lg">
+          © 2026 Grace Life Church. All rights reserved.
+        </p>
+      </footer>
+    </div>
+  )
+}
