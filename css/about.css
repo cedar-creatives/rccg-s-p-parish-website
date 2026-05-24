@@ -1,0 +1,554 @@
+/* ==============================
+   RCCG S&P Parish — about.css
+   Page-specific styles for About Us
+   Requires: css/style.css first
+   ============================== */
+
+/* ===== PAGE HERO ===== */
+.page-hero {
+  min-height: 55vh;
+  background:
+    linear-gradient(rgba(7, 21, 47, 0.82), rgba(7, 21, 47, 0.82)),
+    url('https://images.unsplash.com/photo-1438232992991-995b671e4668?q=80&w=1600&auto=format&fit=crop')
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 8% 80px;
+  color: white;
+}
+
+.page-hero-content {
+  max-width: 750px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.page-hero h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.page-hero p {
+  font-size: 18px;
+  color: #dbeafe;
+  line-height: 1.7;
+}
+
+/* ===== STATS BAR ===== */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--dark);
+  padding: 0;
+}
+
+.stat {
+  padding: 40px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background var(--transition);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.stat-number {
+  display: block;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+
+/* ===== HISTORY SECTION ===== */
+.history-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.history-image {
+  position: sticky;
+  top: 100px;
+}
+
+.history-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  aspect-ratio: 4/5;
+}
+
+.history-image-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: var(--gold);
+  color: #111;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45);
+  letter-spacing: 1px;
+}
+
+/* Timeline blocks */
+.history-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.history-block {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 24px;
+  padding-bottom: 44px;
+  position: relative;
+}
+
+.history-block:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 44px;
+  top: 36px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), var(--light-blue));
+}
+
+.history-year {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  flex-shrink: 0;
+  border: 3px solid var(--gold);
+  position: relative;
+  z-index: 1;
+}
+
+.history-detail {
+  padding-top: 20px;
+}
+
+.history-detail h3 {
+  font-size: 22px;
+  color: var(--blue);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.history-detail p {
+  color: var(--text-body);
+  line-height: 1.85;
+  font-size: 15px;
+}
+
+/* ===== MISSION / VISION / VALUES ===== */
+.mvv-section {
+  background: var(--light-blue);
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.mvv-card {
+  background: white;
+  padding: 44px 32px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border-top: 5px solid var(--gold);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.mvv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.mvv-icon {
+  font-size: 44px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.mvv-card h3 {
+  font-size: 24px;
+  color: var(--blue);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.mvv-card p {
+  color: var(--text-body);
+  line-height: 1.85;
+  font-size: 15px;
+}
+
+/* Featured card overrides — must come AFTER general card rules to win the cascade */
+.mvv-card--featured {
+  background: var(--blue);
+  border-top-color: var(--gold);
+}
+
+.mvv-card--featured h3,
+.mvv-card--featured p {
+  color: white;
+}
+
+.mvv-card--featured .mvv-icon {
+  filter: brightness(1.2);
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.values-list li {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: 20px;
+  position: relative;
+}
+
+.values-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* ===== DENOMINATION ===== */
+.denomination-section {
+  background: var(--dark);
+  padding: 100px 8%;
+}
+
+.denomination-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.denomination-text h2 {
+  font-size: 44px;
+  color: var(--gold);
+  margin-bottom: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.denomination-text p {
+  color: #dbeafe;
+  line-height: 1.9;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.denomination-text strong {
+  color: var(--gold);
+}
+
+.denomination-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+/* ===== LEADERSHIP GRID ===== */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.leader-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.leader-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Featured pastor spans full width with different layout */
+.leader-card--featured {
+  grid-column: 1 / -1;
+  grid-template-columns: 240px 1fr;
+  border-top: 5px solid var(--gold);
+}
+
+.leader-photo-wrap {
+  overflow: hidden;
+}
+
+.leader-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.leader-card:hover .leader-photo-wrap img {
+  transform: scale(1.05);
+}
+
+.leader-info {
+  padding: 28px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leader-role {
+  display: inline-block;
+  background: var(--light-blue);
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.leader-info h3 {
+  font-size: 22px;
+  color: var(--blue);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.leader-info p {
+  color: var(--text-body);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.leader-social {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--light-blue);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+}
+
+.social-link:hover {
+  background: var(--blue);
+  color: white;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  background: var(--blue);
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-inner h2 {
+  font-size: 44px;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.cta-inner p {
+  color: #dbeafe;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .page-hero h1 {
+    font-size: 42px;
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .history-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .history-image {
+    position: static;
+  }
+
+  .mvv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .denomination-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-card--featured {
+    grid-column: auto;
+    grid-template-columns: 180px 1fr;
+  }
+
+  .cta-inner h2 {
+    font-size: 34px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page-hero h1 {
+    font-size: 32px;
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .history-block {
+    grid-template-columns: 70px 1fr;
+    gap: 16px;
+  }
+
+  .history-year {
+    width: 70px;
+    height: 70px;
+    font-size: 13px;
+  }
+
+  .history-block:not(:last-child)::after {
+    left: 34px;
+  }
+
+  .leader-card,
+  .leader-card--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-photo-wrap {
+    height: 220px;
+  }
+
+  .denomination-text h2 {
+    font-size: 32px;
+  }
+
+  .cta-inner h2 {
+    font-size: 28px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
