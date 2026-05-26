@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Daily devotionals, articles and spiritual insights from RCCG S&P Parish to strengthen your faith and walk with God."/>
+  <meta property="og:title" content="Blog &amp; Devotionals — RCCG S&P Parish"/>
+  <meta property="og:description" content="Daily devotionals and articles to strengthen your faith."/>
+  <meta property="og:type" content="website"/>
+  <title>Blog &amp; Devotionals — RCCG S&P Parish</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/blog.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">RCCG <span>S&P Parish</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem" class="active"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold" style="padding:8px 22px; font-size:14px;">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" aria-label="Blog Banner">
+    <div class="page-hero-content reveal">
+      <p class="breadcrumb">Home &rsaquo; Blog &amp; Devotionals</p>
+      <h1>Blog &amp; Devotionals</h1>
+      <p>Daily insights, articles and devotionals to nourish your spirit and deepen your walk with God.</p>
+    </div>
+  </header>
+
+  <!-- FEATURED POST -->
+  <section class="featured-post-section" aria-labelledby="featured-post-heading">
+    <div class="section-title reveal">
+      <h2 id="featured-post-heading">Featured Article</h2>
+    </div>
+    <article class="featured-post reveal" aria-label="Featured blog post">
+      <div class="featured-post-image">
+        <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1200&auto=format&fit=crop"
+             alt="Open Bible with morning light" loading="lazy"/>
+        <span class="post-category-badge">Devotional</span>
+      </div>
+      <div class="featured-post-content">
+        <div class="post-meta">
+          <span>📅 1 June 2025</span>
+          <span>✍️ Pastor Femi Abolarin</span>
+          <span>⏱ 5 min read</span>
+        </div>
+        <h3>Starting Your Day With God: The Power of Morning Devotion</h3>
+        <p>There is something profoundly transformative about beginning each day in the presence of God. Before the noise of the world rushes in — before the notifications, the demands and the pressures — there is a sacred window of time that belongs entirely to you and your Creator.</p>
+        <p>The Psalmist declared, "In the morning, Lord, you hear my voice; in the morning I lay my requests before you and wait expectantly" (Psalm 5:3). This was not merely a poetic expression — it was a deliberate, daily discipline that shaped the entire trajectory of his day.</p>
+        <a href="#" class="btn btn-gold">Read Full Article</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section id="articles" aria-labelledby="articles-heading">
+    <div class="section-title reveal">
+      <h2 id="articles-heading">All Articles</h2>
+      <p>Browse our library of devotionals and spiritual insights.</p>
+    </div>
+
+    <!-- Filter -->
+    <div class="blog-filters reveal" role="group" aria-label="Filter articles by category">
+      <button class="blog-filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="blog-filter-btn" data-filter="devotional" aria-pressed="false">Devotional</button>
+      <button class="blog-filter-btn" data-filter="teaching" aria-pressed="false">Teaching</button>
+      <button class="blog-filter-btn" data-filter="testimony" aria-pressed="false">Testimony</button>
+      <button class="blog-filter-btn" data-filter="prayer" aria-pressed="false">Prayer</button>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+
+      <article class="blog-card reveal" data-category="devotional">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=600&auto=format&fit=crop" alt="Prayer hands" loading="lazy"/>
+          <span class="blog-category-tag">Devotional</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>📅 28 May 2025</span>
+            <span>⏱ 3 min</span>
+          </div>
+          <h3>The Secret Place: Why Private Prayer Changes Everything</h3>
+          <p>Jesus said, "When you pray, go into your room, close the door and pray to your Father, who is unseen." Discover why your private prayer life is the engine of your public faith.</p>
+          <a href="#" class="blog-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="teaching">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=600&auto=format&fit=crop" alt="Open Bible" loading="lazy"/>
+          <span class="blog-category-tag blog-category-tag--teaching">Teaching</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>📅 22 May 2025</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <h3>Understanding Grace: More Than Just Forgiveness</h3>
+          <p>Grace is often reduced to "unmerited favour" — but the biblical concept of grace is far richer, more powerful and more practical than most believers realise.</p>
+          <a href="#" class="blog-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="testimony">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?q=80&w=600&auto=format&fit=crop" alt="Church congregation" loading="lazy"/>
+          <span class="blog-category-tag blog-category-tag--testimony">Testimony</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>📅 15 May 2025</span>
+            <span>⏱ 4 min</span>
+          </div>
+          <h3>"God Healed My Marriage" — A Member's Story of Restoration</h3>
+          <p>After three years of separation and a pending divorce, Sister Blessing shares how God intervened and restored her marriage through prayer and the Word.</p>
+          <a href="#" class="blog-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="prayer">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=600&auto=format&fit=crop" alt="Sunrise prayer" loading="lazy"/>
+          <span class="blog-category-tag blog-category-tag--prayer">Prayer</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>📅 10 May 2025</span>
+            <span>⏱ 5 min</span>
+          </div>
+          <h3>30 Days of Prayer: A Guide to Building a Consistent Prayer Life</h3>
+          <p>A practical, day-by-day guide to help you build the habit of daily prayer — even if you've struggled with consistency in the past.</p>
+          <a href="#" class="blog-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="devotional">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=600&auto=format&fit=crop" alt="Church worship" loading="lazy"/>
+          <span class="blog-category-tag">Devotional</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>📅 5 May 2025</span>
+            <span>⏱ 4 min</span>
+          </div>
+          <h3>When God Seems Silent: Trusting Him in the Waiting Season</h3>
+          <p>Every believer goes through seasons where heaven feels quiet. Here's what the Bible says about waiting on God — and why the silence is never abandonment.</p>
+          <a href="#" class="blog-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="teaching">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=600&auto=format&fit=crop" alt="Giving hands" loading="lazy"/>
+          <span class="blog-category-tag blog-category-tag--teaching">Teaching</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>📅 28 Apr 2025</span>
+            <span>⏱ 6 min</span>
+          </div>
+          <h3>The Principle of Sowing and Reaping: God's Financial System</h3>
+          <p>What does the Bible actually say about money, giving and financial blessing? A clear, balanced teaching on God's economic principles for believers.</p>
+          <a href="#" class="blog-read-more">Read More →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="blog-empty" id="blogEmpty" hidden aria-live="polite">
+      <span aria-hidden="true">📝</span>
+      <p>No articles in this category yet. Check back soon!</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
+      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
+  <script src="js/main.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>

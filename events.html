@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Upcoming events, programmes and announcements at RCCG S&P Parish, Lagos. Join us for services, vigils, outreach and special celebrations."/>
+  <meta property="og:title" content="Events — RCCG S&P Parish"/>
+  <meta property="og:description" content="Upcoming programmes, services and special events at RCCG S&P Parish."/>
+  <meta property="og:type" content="website"/>
+
+  <title>Events — RCCG S&P Parish</title>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/events.css"/>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">RCCG <span>S&P Parish</span></div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem" class="active"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold" style="padding:8px 22px; font-size:14px;">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <header class="page-hero" aria-label="Events Banner">
+    <div class="page-hero-content reveal">
+      <p class="breadcrumb">Home &rsaquo; Events</p>
+      <h1>Upcoming Events</h1>
+      <p>Stay connected with what God is doing at RCCG S&P Parish. Join us for our programmes and special services.</p>
+    </div>
+  </header>
+
+  <!-- ===== FEATURED EVENT ===== -->
+  <section class="featured-event" id="featured" aria-labelledby="featured-heading">
+    <div class="featured-inner reveal">
+      <div class="featured-badge">⭐ Featured Event</div>
+      <div class="featured-content">
+        <div class="featured-date-block" aria-label="Event date">
+          <span class="featured-day">15</span>
+          <span class="featured-month">JUN</span>
+          <span class="featured-year">2025</span>
+        </div>
+        <div class="featured-details">
+          <span class="event-tag event-tag--special">Special Service</span>
+          <h2 id="featured-heading">Annual Thanksgiving Service</h2>
+          <p>Join us for a powerful evening of praise, worship and testimonies as we celebrate God's faithfulness over the past year. Come with your family and friends — all are welcome.</p>
+          <ul class="event-meta" role="list">
+            <li>
+              <span class="meta-icon" aria-hidden="true">🕐</span>
+              <span>Sunday, 15 June 2025 &bull; 9:30 AM – 1:00 PM</span>
+            </li>
+            <li>
+              <span class="meta-icon" aria-hidden="true">📍</span>
+              <span>52 Peter Agha Street, Oke-Afa, Isolo, Lagos</span>
+            </li>
+            <li>
+              <span class="meta-icon" aria-hidden="true">👤</span>
+              <span>Open to all — no registration required</span>
+            </li>
+          </ul>
+          <div class="featured-actions">
+            <a href="index.html#contact" class="btn btn-gold">Get Directions</a>
+            <a href="#" class="btn btn-outline-dark">Add to Calendar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== UPCOMING EVENTS ===== -->
+  <section id="upcoming" aria-labelledby="upcoming-heading">
+    <div class="section-title reveal">
+      <h2 id="upcoming-heading">All Upcoming Events</h2>
+      <p>Mark your calendar and come worship with us.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="event-filters reveal" role="group" aria-label="Filter events by type">
+      <button class="event-filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="event-filter-btn" data-filter="service" aria-pressed="false">Services</button>
+      <button class="event-filter-btn" data-filter="vigil" aria-pressed="false">Vigils</button>
+      <button class="event-filter-btn" data-filter="outreach" aria-pressed="false">Outreach</button>
+      <button class="event-filter-btn" data-filter="special" aria-pressed="false">Special</button>
+      <button class="event-filter-btn" data-filter="youth" aria-pressed="false">Youth</button>
+    </div>
+
+    <!-- Events grid -->
+    <!--
+      HOW TO ADD / UPDATE EVENTS:
+      1. Copy one <article class="event-card"> block
+      2. Update data-category to one of: service | vigil | outreach | special | youth
+      3. Update the date numbers, month, title, description, time and location
+      4. Update the event-tag class and text to match the category
+      5. Past events: add class "event-card--past" to grey them out
+    -->
+    <div class="events-grid" id="eventsGrid">
+
+      <!-- Event 1 -->
+      <article class="event-card reveal" data-category="special" aria-label="Annual Thanksgiving Service">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">15</span>
+          <span class="event-month">JUN</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--special">Special Service</span>
+          <h3>Annual Thanksgiving Service</h3>
+          <p>A powerful service of praise, worship and testimonies celebrating God's faithfulness.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Sunday &bull; 9:30 AM</li>
+            <li><span aria-hidden="true">📍</span> Church Auditorium</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 2 -->
+      <article class="event-card reveal" data-category="vigil" aria-label="Night of Breakthrough Vigil">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">20</span>
+          <span class="event-month">JUN</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--vigil">Vigil</span>
+          <h3>Night of Breakthrough</h3>
+          <p>An all-night prayer and worship session. Come expecting miracles, breakthroughs and divine encounters.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Friday &bull; 10:00 PM – 4:00 AM</li>
+            <li><span aria-hidden="true">📍</span> Church Auditorium</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 3 -->
+      <article class="event-card reveal" data-category="outreach" aria-label="Community Outreach Programme">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">28</span>
+          <span class="event-month">JUN</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--outreach">Outreach</span>
+          <h3>Community Outreach Programme</h3>
+          <p>Join our evangelism team as we take the gospel to the streets of Oke-Afa and surrounding communities.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Saturday &bull; 8:00 AM – 12:00 PM</li>
+            <li><span aria-hidden="true">📍</span> Oke-Afa Community</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 4 -->
+      <article class="event-card reveal" data-category="youth" aria-label="Youth Hangout and Bible Study">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">05</span>
+          <span class="event-month">JUL</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--youth">Youth</span>
+          <h3>Youth Hangout &amp; Bible Study</h3>
+          <p>A fun, faith-filled afternoon for young people — games, fellowship, worship and a Word session.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Saturday &bull; 3:00 PM – 6:00 PM</li>
+            <li><span aria-hidden="true">📍</span> Church Hall</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 5 -->
+      <article class="event-card reveal" data-category="service" aria-label="Digging Deep Bible Study">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">08</span>
+          <span class="event-month">JUL</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--service">Bible Study</span>
+          <h3>Digging Deep — Mid-Week Service</h3>
+          <p>Our weekly Tuesday Bible study. Come grow deeper in the understanding of God's Word with us.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Tuesday &bull; 6:00 PM</li>
+            <li><span aria-hidden="true">📍</span> Church Auditorium</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 6 -->
+      <article class="event-card reveal" data-category="vigil" aria-label="Faith Clinic Prayer Night">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">11</span>
+          <span class="event-month">JUL</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--vigil">Prayer</span>
+          <h3>Faith Clinic — Prayer Night</h3>
+          <p>A powerful atmosphere of prayer, intercession and breakthrough. Bring your needs before God.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Thursday &bull; 6:00 PM</li>
+            <li><span aria-hidden="true">📍</span> Church Auditorium</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 7 -->
+      <article class="event-card reveal" data-category="special" aria-label="Workers and Leaders Retreat">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">19</span>
+          <span class="event-month">JUL</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--special">Retreat</span>
+          <h3>Workers &amp; Leaders Retreat</h3>
+          <p>A dedicated retreat for all church workers and ministry leaders — refreshing, equipping and re-aligning for purpose.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Saturday &bull; 9:00 AM – 5:00 PM</li>
+            <li><span aria-hidden="true">📍</span> Venue TBC</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 8 -->
+      <article class="event-card reveal" data-category="outreach" aria-label="Hospital Visitation Outreach">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">26</span>
+          <span class="event-month">JUL</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--outreach">Outreach</span>
+          <h3>Hospital Visitation Outreach</h3>
+          <p>Bringing hope, prayer and gifts to patients at the local hospital. Volunteers welcome — contact us to join.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Saturday &bull; 10:00 AM – 1:00 PM</li>
+            <li><span aria-hidden="true">📍</span> Isolo General Hospital</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+      <!-- Event 9 -->
+      <article class="event-card reveal" data-category="youth" aria-label="Youth Sunday">
+        <div class="event-card-date" aria-hidden="true">
+          <span class="event-day">03</span>
+          <span class="event-month">AUG</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-tag event-tag--youth">Youth</span>
+          <h3>Youth Sunday</h3>
+          <p>The young people take the lead! A full Sunday service led by the youth ministry — worship, Word and ministry.</p>
+          <ul class="event-card-meta" role="list">
+            <li><span aria-hidden="true">🕐</span> Sunday &bull; 9:30 AM</li>
+            <li><span aria-hidden="true">📍</span> Church Auditorium</li>
+          </ul>
+        </div>
+        <div class="event-card-footer">
+          <a href="index.html#contact" class="event-link">Learn More →</a>
+        </div>
+      </article>
+
+    </div><!-- end .events-grid -->
+
+    <!-- Empty state -->
+    <div class="events-empty" id="eventsEmpty" hidden aria-live="polite">
+      <span aria-hidden="true">📅</span>
+      <p>No events in this category right now. Check back soon!</p>
+    </div>
+
+  </section>
+
+  <!-- ===== WEEKLY SCHEDULE ===== -->
+  <section class="weekly-section" id="weekly" aria-labelledby="weekly-heading">
+    <div class="section-title reveal">
+      <h2 id="weekly-heading">Weekly Schedule</h2>
+      <p>Our regular services — every week, without fail.</p>
+    </div>
+
+    <div class="weekly-grid">
+      <div class="weekly-card reveal">
+        <div class="weekly-day">Sunday</div>
+        <div class="weekly-icon" aria-hidden="true">🙏</div>
+        <h3>Sunday Service</h3>
+        <p class="weekly-time">9:30 AM – 12:30 PM</p>
+        <p>Worship, praise and life-transforming messages. The main gathering of the week.</p>
+      </div>
+
+      <div class="weekly-card reveal">
+        <div class="weekly-day">Tuesday</div>
+        <div class="weekly-icon" aria-hidden="true">📖</div>
+        <h3>Digging Deep</h3>
+        <p class="weekly-time">6:00 PM – 8:00 PM</p>
+        <p>Mid-week Bible study. Grow deeper in the understanding of God's Word.</p>
+      </div>
+
+      <div class="weekly-card reveal">
+        <div class="weekly-day">Thursday</div>
+        <div class="weekly-icon" aria-hidden="true">🔥</div>
+        <h3>Faith Clinic</h3>
+        <p class="weekly-time">6:00 PM – 8:00 PM</p>
+        <p>A powerful atmosphere of prayer, intercession and breakthrough.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAY UPDATED CTA ===== -->
+  <section class="events-cta" aria-label="Stay updated">
+    <div class="events-cta-inner reveal">
+      <h2>Never miss an event</h2>
+      <p>Follow us on WhatsApp or social media to get notified about upcoming programmes, announcements and special services.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <span aria-hidden="true">💬</span> Join WhatsApp Group
+        </a>
+        <a href="index.html#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
+      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

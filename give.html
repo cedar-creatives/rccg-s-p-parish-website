@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Give online to RCCG S&P Parish. Pay your tithes, offerings and special seeds securely via Paystack or bank transfer."/>
+  <meta property="og:title" content="Give — RCCG S&P Parish"/>
+  <meta property="og:description" content="Support the work of God at RCCG S&P Parish through tithes, offerings and donations."/>
+  <meta property="og:type" content="website"/>
+
+  <title>Give — RCCG S&P Parish</title>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/give.css"/>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">RCCG <span>S&P Parish</span></div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold active" style="padding:8px 22px; font-size:14px;">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <header class="page-hero" aria-label="Give Banner">
+    <div class="page-hero-content reveal">
+      <p class="breadcrumb">Home &rsaquo; Give</p>
+      <h1>Give to God's Work</h1>
+      <p>Your giving supports the gospel, builds lives and extends God's kingdom. Every seed sown here matters.</p>
+    </div>
+  </header>
+
+  <!-- ===== SCRIPTURE BANNER ===== -->
+  <div class="scripture-banner" role="note" aria-label="Scripture on giving">
+    <blockquote>
+      "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap."
+      <cite>— Luke 6:38</cite>
+    </blockquote>
+  </div>
+
+  <!-- ===== GIVING FORM ===== -->
+  <section id="give-online" aria-labelledby="give-heading">
+    <div class="section-title reveal">
+      <h2 id="give-heading">Give Online</h2>
+      <p>Secure, fast and simple — powered by Paystack.</p>
+    </div>
+
+    <div class="give-layout">
+
+      <!-- Left: Giving Form -->
+      <div class="give-form-wrap reveal">
+        <form id="giveForm" novalidate aria-label="Online giving form">
+
+          <!-- Giving type tabs -->
+          <div class="give-type-tabs" role="group" aria-label="Select giving type">
+            <button type="button" class="give-type-btn active" data-type="tithe" aria-pressed="true">
+              <span aria-hidden="true">🙏</span> Tithe
+            </button>
+            <button type="button" class="give-type-btn" data-type="offering" aria-pressed="false">
+              <span aria-hidden="true">🎁</span> Offering
+            </button>
+            <button type="button" class="give-type-btn" data-type="seed" aria-pressed="false">
+              <span aria-hidden="true">🌱</span> Special Seed
+            </button>
+            <button type="button" class="give-type-btn" data-type="project" aria-pressed="false">
+              <span aria-hidden="true">🏗️</span> Building Fund
+            </button>
+          </div>
+
+          <!-- Hidden input to track selected type -->
+          <input type="hidden" id="givingType" name="givingType" value="tithe"/>
+
+          <!-- Amount selection -->
+          <div class="form-group">
+            <label>Select Amount (₦)</label>
+            <div class="amount-presets" role="group" aria-label="Preset giving amounts">
+              <button type="button" class="amount-btn" data-amount="1000">₦1,000</button>
+              <button type="button" class="amount-btn" data-amount="2000">₦2,000</button>
+              <button type="button" class="amount-btn" data-amount="5000">₦5,000</button>
+              <button type="button" class="amount-btn" data-amount="10000">₦10,000</button>
+              <button type="button" class="amount-btn" data-amount="20000">₦20,000</button>
+              <button type="button" class="amount-btn" data-amount="50000">₦50,000</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="customAmount">Or enter a custom amount (₦)</label>
+            <div class="amount-input-wrap">
+              <span class="currency-symbol" aria-hidden="true">₦</span>
+              <input
+                type="number"
+                id="customAmount"
+                name="amount"
+                placeholder="e.g. 15000"
+                min="100"
+                step="100"
+                autocomplete="off"
+                aria-describedby="amountError"
+              />
+            </div>
+            <span class="error-msg" id="amountError" role="alert"></span>
+          </div>
+
+          <!-- Donor details -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="donorName">Full Name</label>
+              <input
+                type="text"
+                id="donorName"
+                name="donorName"
+                placeholder="e.g. John Adeyemi"
+                required
+                autocomplete="name"
+                aria-describedby="nameError"
+              />
+              <span class="error-msg" id="nameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="donorEmail">Email Address</label>
+              <input
+                type="email"
+                id="donorEmail"
+                name="donorEmail"
+                placeholder="e.g. john@email.com"
+                required
+                autocomplete="email"
+                aria-describedby="emailError"
+              />
+              <span class="error-msg" id="emailError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="donorPhone">Phone Number <span class="optional">(optional)</span></label>
+            <input
+              type="tel"
+              id="donorPhone"
+              name="donorPhone"
+              placeholder="e.g. 08012345678"
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="giveNote">Note / Purpose <span class="optional">(optional)</span></label>
+            <input
+              type="text"
+              id="giveNote"
+              name="giveNote"
+              placeholder="e.g. Thanksgiving offering"
+            />
+          </div>
+
+          <!-- Summary -->
+          <div class="give-summary" id="giveSummary" hidden aria-live="polite">
+            <div class="give-summary-row">
+              <span>Giving type:</span>
+              <strong id="summaryType">—</strong>
+            </div>
+            <div class="give-summary-row">
+              <span>Amount:</span>
+              <strong id="summaryAmount">—</strong>
+            </div>
+          </div>
+
+          <!-- Paystack button -->
+          <button type="submit" class="btn btn-give" id="payBtn">
+            <span aria-hidden="true">🔒</span> Give Securely via Paystack
+          </button>
+
+          <p class="give-secure-note">
+            <span aria-hidden="true">🔐</span>
+            Payments are processed securely by <strong>Paystack</strong>. Your card details are never stored on our servers.
+          </p>
+
+          <!-- Success message -->
+          <div class="give-success" id="giveSuccess" hidden aria-live="polite">
+            <span aria-hidden="true">🙌</span>
+            <h3>Thank you for your giving!</h3>
+            <p>Your seed has been received. May God bless and multiply it back to you in Jesus' name.</p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Right: Bank Transfer + Info -->
+      <div class="give-info reveal">
+
+        <!-- Bank Transfer -->
+        <div class="give-info-card">
+          <h3>
+            <span aria-hidden="true">🏦</span> Bank Transfer
+          </h3>
+          <p>Prefer to give directly? Use the bank details below:</p>
+          <ul class="bank-details" role="list">
+            <li>
+              <span class="bank-label">Bank</span>
+              <span class="bank-value">First Bank of Nigeria</span>
+            </li>
+            <li>
+              <span class="bank-label">Account Name</span>
+              <span class="bank-value">RCCG S&P Parish</span>
+            </li>
+            <li>
+              <span class="bank-label">Account Number</span>
+              <span class="bank-value" id="accountNumber">0123456789</span>
+            </li>
+          </ul>
+          <button class="copy-btn" id="copyAccBtn" aria-label="Copy account number to clipboard">
+            📋 Copy Account Number
+          </button>
+          <p class="copy-confirm" id="copyConfirm" hidden aria-live="polite">✅ Copied!</p>
+        </div>
+
+        <!-- Why Give -->
+        <div class="give-info-card give-info-card--why">
+          <h3>
+            <span aria-hidden="true">❤️</span> Why We Give
+          </h3>
+          <ul class="why-list" role="list">
+            <li>
+              <span class="why-icon" aria-hidden="true">📢</span>
+              <div>
+                <strong>Spread the Gospel</strong>
+                <p>Your giving funds evangelism, outreach and missions across Lagos and beyond.</p>
+              </div>
+            </li>
+            <li>
+              <span class="why-icon" aria-hidden="true">🏗️</span>
+              <div>
+                <strong>Build the House of God</strong>
+                <p>Contributions go towards maintaining and expanding our church facilities.</p>
+              </div>
+            </li>
+            <li>
+              <span class="why-icon" aria-hidden="true">🤝</span>
+              <div>
+                <strong>Support the Community</strong>
+                <p>We use your gifts to support widows, orphans and those in need around us.</p>
+              </div>
+            </li>
+            <li>
+              <span class="why-icon" aria-hidden="true">📖</span>
+              <div>
+                <strong>Equip the Saints</strong>
+                <p>Resources for Bible study materials, training and ministry development.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GIVING TYPES EXPLAINED ===== -->
+  <section class="giving-types-section" aria-labelledby="types-heading">
+    <div class="section-title reveal">
+      <h2 id="types-heading">Types of Giving</h2>
+      <p>Understanding the different ways you can honour God with your resources.</p>
+    </div>
+
+    <div class="giving-types-grid">
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🙏</div>
+        <h3>Tithe</h3>
+        <p>The tithe is 10% of your income, returned to God as an act of worship and trust. It is the foundation of biblical giving (Malachi 3:10).</p>
+      </article>
+
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🎁</div>
+        <h3>Offering</h3>
+        <p>An offering is a freewill gift given above the tithe — an expression of gratitude and love for what God has done in your life.</p>
+      </article>
+
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🌱</div>
+        <h3>Special Seed</h3>
+        <p>A seed sown in faith for a specific breakthrough, miracle or answer to prayer. God honours faith-filled giving (2 Corinthians 9:6).</p>
+      </article>
+
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🏗️</div>
+        <h3>Building Fund</h3>
+        <p>Contributions specifically towards the construction, renovation and expansion of our church building and facilities.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
+      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
+
+  <!--
+    PAYSTACK INTEGRATION:
+    1. Sign up at https://paystack.com and get your PUBLIC KEY
+    2. Replace 'pk_test_YOUR_PAYSTACK_PUBLIC_KEY_HERE' in give.js with your real key
+    3. For production, use your LIVE public key (pk_live_...)
+    4. The form will call Paystack's inline popup on submit
+  -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/give.js"></script>
+</body>
+</html>

@@ -29,12 +29,36 @@
     </button>
 
     <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="/about.html" class="nav-link">About</a></li>
-      <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#ministries" class="nav-link">Ministries</a></li>
-      <li><a href="#pastor" class="nav-link">Pastor</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
+
+      <!-- Explore dropdown -->
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+
+      <!-- Connect dropdown -->
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold" style="padding:8px 22px; font-size:14px;">Give</a></li>
     </ul>
   </nav>
 

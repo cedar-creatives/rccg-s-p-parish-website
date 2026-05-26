@@ -1,0 +1,87 @@
+/* ==============================
+   RCCG S&P Parish — ministries.css
+   ============================== */
+
+.page-hero {
+  min-height: 55vh;
+  background:
+    linear-gradient(rgba(7,21,47,0.82), rgba(7,21,47,0.82)),
+    url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop')
+    center/cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:140px 8% 80px; color:white;
+}
+.page-hero-content { max-width:750px; }
+.breadcrumb { font-size:14px; color:var(--gold); letter-spacing:1px; margin-bottom:16px; font-weight:500; }
+.page-hero h1 { font-size:56px; font-weight:800; line-height:1.15; margin-bottom:20px; }
+.page-hero p  { font-size:18px; color:#dbeafe; line-height:1.7; }
+
+/* Ministry detail grid */
+.ministries-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.ministry-detail-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.ministry-detail-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.ministry-detail-header {
+  padding: 32px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+}
+.ministry-detail-header--youth      { background: linear-gradient(135deg, #0b3d91, #1a5dc8); }
+.ministry-detail-header--children   { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.ministry-detail-header--choir      { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+.ministry-detail-header--ushering   { background: linear-gradient(135deg, #059669, #10b981); }
+.ministry-detail-header--media      { background: linear-gradient(135deg, #dc2626, #ef4444); }
+.ministry-detail-header--evangelism { background: linear-gradient(135deg, #0b3d91, #d4af37); }
+
+.ministry-detail-icon { font-size:36px; flex-shrink:0; }
+.ministry-detail-header h2 { font-size:22px; font-weight:800; color:white; margin:0; }
+
+.ministry-detail-body { padding:28px; }
+.ministry-detail-body > p { color:var(--text-body); font-size:15px; line-height:1.85; margin-bottom:20px; }
+.ministry-detail-body h3 { font-size:15px; font-weight:700; color:var(--blue); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.5px; }
+
+.ministry-detail-body ul {
+  list-style:none; padding:0; margin:0 0 20px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.ministry-detail-body ul li {
+  font-size:14px; color:var(--text-body); line-height:1.6;
+  padding-left:18px; position:relative;
+}
+.ministry-detail-body ul li::before { content:'→'; position:absolute; left:0; color:var(--gold); font-weight:700; }
+
+.ministry-meeting { color:var(--blue); font-weight:600; font-size:14px; margin-bottom:20px; }
+
+/* CTA */
+.ministries-cta { background:var(--blue); padding:90px 8%; text-align:center; }
+.ministries-cta-inner { max-width:650px; margin:0 auto; }
+.ministries-cta-inner h2 { font-size:40px; color:white; font-weight:800; margin-bottom:16px; }
+.ministries-cta-inner p  { color:#dbeafe; font-size:16px; line-height:1.8; margin-bottom:32px; }
+.cta-buttons { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+@media (max-width:900px) {
+  .page-hero h1 { font-size:42px; }
+  .ministries-detail-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .page-hero h1 { font-size:32px; }
+  .ministries-cta-inner h2 { font-size:28px; }
+  .cta-buttons { flex-direction:column; align-items:center; }
+}

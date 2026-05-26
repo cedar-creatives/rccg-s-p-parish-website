@@ -1,0 +1,130 @@
+/* ==============================
+   RCCG S&P Parish — volunteer.css
+   ============================== */
+
+.page-hero {
+  min-height: 50vh;
+  background:
+    linear-gradient(rgba(7,21,47,0.82), rgba(7,21,47,0.82)),
+    url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop')
+    center/cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:140px 8% 80px; color:white;
+}
+.page-hero-content { max-width:750px; }
+.breadcrumb { font-size:14px; color:var(--gold); letter-spacing:1px; margin-bottom:16px; font-weight:500; }
+.page-hero h1 { font-size:56px; font-weight:800; line-height:1.15; margin-bottom:20px; }
+.page-hero p  { font-size:18px; color:#dbeafe; line-height:1.7; }
+
+/* Why serve */
+.why-serve-section { background:var(--light-blue); }
+.why-serve-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+}
+.why-serve-card {
+  background:white; border-radius:var(--radius-md); padding:34px 24px;
+  text-align:center; box-shadow:var(--shadow-sm); border-top:5px solid var(--gold);
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.why-serve-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-md); }
+.why-serve-icon { font-size:38px; display:block; margin-bottom:14px; }
+.why-serve-card h3 { font-size:18px; color:var(--blue); font-weight:700; margin-bottom:10px; }
+.why-serve-card p  { color:var(--text-body); font-size:14px; line-height:1.75; }
+
+/* Volunteer layout */
+.volunteer-layout {
+  display:grid; grid-template-columns:1fr 320px; gap:50px; align-items:start;
+}
+
+.volunteer-form-wrap {
+  background:white; border-radius:var(--radius-lg);
+  padding:44px 40px; box-shadow:var(--shadow-md);
+}
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { display:flex; flex-direction:column; gap:7px; margin-bottom:20px; }
+.form-group label { font-weight:600; font-size:14px; color:var(--blue); }
+.form-hint { font-size:13px; color:var(--text-light); margin-top:-4px; }
+.optional { font-weight:400; color:var(--text-light); font-size:13px; }
+.required-star { color:#ef4444; }
+
+select {
+  width:100%; padding:16px 20px; border:2px solid transparent;
+  border-radius:var(--radius-sm); font-size:15px; outline:none;
+  font-family:'Poppins',sans-serif; background:white; color:#0f172a;
+  transition:border-color var(--transition); cursor:pointer;
+}
+select:focus { border-color:var(--blue); box-shadow:0 0 0 4px rgba(11,61,145,0.1); }
+select.error  { border-color:#ef4444; }
+
+/* Ministry checkboxes */
+.ministry-checkboxes {
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  margin-top:8px;
+}
+.checkbox-label {
+  display:flex; align-items:center; gap:10px;
+  cursor:pointer; font-size:14px; color:var(--text-body);
+  padding:10px 14px; border:2px solid #e2e8f0; border-radius:var(--radius-sm);
+  transition:border-color var(--transition), background var(--transition);
+}
+.checkbox-label:hover { border-color:var(--blue); background:var(--light-blue); }
+.checkbox-label input[type="checkbox"] {
+  width:16px; height:16px; accent-color:var(--blue); cursor:pointer; flex-shrink:0;
+}
+.checkbox-label:has(input:checked) { border-color:var(--gold); background:#fffbeb; }
+
+.btn-full { width:100%; justify-content:center; display:flex; align-items:center; gap:8px; }
+
+/* Sidebar */
+.volunteer-sidebar { display:flex; flex-direction:column; gap:20px; }
+
+.vol-sidebar-card {
+  background:white; border-radius:var(--radius-md);
+  padding:26px 24px; box-shadow:var(--shadow-sm);
+  border:1px solid rgba(0,0,0,0.05);
+}
+.vol-sidebar-card h3 { font-size:17px; color:var(--blue); font-weight:700; margin-bottom:14px; }
+.vol-sidebar-card p  { color:var(--text-body); font-size:14px; line-height:1.75; }
+
+.vol-sidebar-card--dark { background:var(--dark); border-top:4px solid var(--gold); }
+.vol-sidebar-card--dark h3 { color:var(--gold); }
+.vol-sidebar-card--dark blockquote {
+  color:#dbeafe; font-size:14px; line-height:1.8; font-style:italic; margin-bottom:10px;
+}
+.vol-sidebar-card--dark cite { color:var(--gold); font-size:13px; font-weight:700; font-style:normal; }
+
+.vol-steps {
+  list-style:none; padding:0; margin:0;
+  counter-reset:steps;
+  display:flex; flex-direction:column; gap:12px;
+}
+.vol-steps li {
+  counter-increment:steps;
+  display:flex; align-items:flex-start; gap:12px;
+  font-size:14px; color:var(--text-body); line-height:1.6;
+}
+.vol-steps li::before {
+  content:counter(steps);
+  min-width:26px; height:26px;
+  background:var(--blue); color:white;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700; flex-shrink:0;
+}
+
+@media (max-width:1024px) {
+  .volunteer-layout { grid-template-columns:1fr; max-width:680px; margin:0 auto; }
+  .volunteer-sidebar { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+}
+@media (max-width:900px) {
+  .page-hero h1 { font-size:42px; }
+  .why-serve-grid { grid-template-columns:repeat(2,1fr); }
+  .volunteer-sidebar { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .page-hero h1 { font-size:32px; }
+  .volunteer-form-wrap { padding:28px 20px; }
+  .form-row { grid-template-columns:1fr; }
+  .ministry-checkboxes { grid-template-columns:1fr; }
+  .why-serve-grid { grid-template-columns:1fr; }
+}

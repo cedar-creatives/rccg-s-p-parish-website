@@ -1,0 +1,154 @@
+/* ==============================
+   RCCG S&P Parish — blog.css
+   ============================== */
+
+.page-hero {
+  min-height: 50vh;
+  background:
+    linear-gradient(rgba(7,21,47,0.85), rgba(7,21,47,0.85)),
+    url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop')
+    center/cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:140px 8% 80px; color:white;
+}
+.page-hero-content { max-width:750px; }
+.breadcrumb { font-size:14px; color:var(--gold); letter-spacing:1px; margin-bottom:16px; font-weight:500; }
+.page-hero h1 { font-size:56px; font-weight:800; line-height:1.15; margin-bottom:20px; }
+.page-hero p  { font-size:18px; color:#dbeafe; line-height:1.7; }
+
+/* ===== FEATURED POST ===== */
+.featured-post-section { background: var(--light-blue); }
+
+.featured-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.featured-post-image {
+  position: relative;
+  height: 100%;
+  min-height: 380px;
+}
+.featured-post-image img {
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.post-category-badge {
+  position:absolute; top:20px; left:20px;
+  background:var(--gold); color:#111;
+  font-size:11px; font-weight:700; padding:5px 14px;
+  border-radius:50px; text-transform:uppercase; letter-spacing:1px;
+}
+
+.featured-post-content { padding: 40px 40px 40px 0; }
+
+.post-meta {
+  display:flex; flex-wrap:wrap; gap:14px;
+  font-size:13px; color:var(--text-light);
+  margin-bottom:16px;
+}
+
+.featured-post-content h3 {
+  font-size:26px; color:var(--blue); font-weight:800;
+  line-height:1.3; margin-bottom:16px;
+}
+.featured-post-content p {
+  color:var(--text-body); font-size:15px; line-height:1.85; margin-bottom:14px;
+}
+
+/* ===== BLOG FILTERS ===== */
+.blog-filters {
+  display:flex; flex-wrap:wrap; gap:10px;
+  margin-bottom:32px;
+}
+.blog-filter-btn {
+  padding:8px 22px; border:2px solid var(--blue); border-radius:50px;
+  background:transparent; color:var(--blue);
+  font-family:'Poppins',sans-serif; font-size:13px; font-weight:600;
+  cursor:pointer; transition:background var(--transition), color var(--transition), transform var(--transition);
+}
+.blog-filter-btn:hover { background:var(--light-blue); transform:translateY(-2px); }
+.blog-filter-btn.active { background:var(--blue); color:white; }
+
+/* ===== BLOG GRID ===== */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.blog-card {
+  background:white; border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm); overflow:hidden;
+  border:1px solid rgba(0,0,0,0.05);
+  display:flex; flex-direction:column;
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.blog-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-md); }
+.blog-card.hidden { display:none; }
+
+.blog-card-image {
+  position:relative; overflow:hidden;
+  aspect-ratio:16/9;
+}
+.blog-card-image img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform 0.5s ease;
+}
+.blog-card:hover .blog-card-image img { transform:scale(1.06); }
+
+.blog-category-tag {
+  position:absolute; top:14px; left:14px;
+  background:var(--gold); color:#111;
+  font-size:10px; font-weight:700; padding:4px 12px;
+  border-radius:50px; text-transform:uppercase; letter-spacing:1px;
+}
+.blog-category-tag--teaching  { background:#dbeafe; color:#1e40af; }
+.blog-category-tag--testimony { background:#dcfce7; color:#166534; }
+.blog-category-tag--prayer    { background:#ede9fe; color:#5b21b6; }
+
+.blog-card-body { padding:22px 20px; flex:1; display:flex; flex-direction:column; }
+
+.blog-card-meta {
+  display:flex; gap:14px; font-size:12px;
+  color:var(--text-light); margin-bottom:12px;
+}
+
+.blog-card-body h3 {
+  font-size:17px; color:var(--blue); font-weight:700;
+  line-height:1.4; margin-bottom:10px;
+}
+.blog-card-body p {
+  color:var(--text-body); font-size:14px; line-height:1.75;
+  margin-bottom:16px; flex:1;
+}
+
+.blog-read-more {
+  color:var(--blue); font-size:14px; font-weight:600;
+  text-decoration:none; transition:color var(--transition);
+  align-self:flex-start;
+}
+.blog-read-more:hover { color:var(--gold); }
+
+/* Empty state */
+.blog-empty { text-align:center; padding:80px 20px; color:var(--text-light); }
+.blog-empty span { font-size:56px; display:block; margin-bottom:16px; }
+.blog-empty p { font-size:17px; }
+
+/* Responsive */
+@media (max-width:900px) {
+  .page-hero h1 { font-size:42px; }
+  .featured-post { grid-template-columns:1fr; }
+  .featured-post-image { min-height:260px; }
+  .featured-post-content { padding:28px; }
+  .blog-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px) {
+  .page-hero h1 { font-size:32px; }
+  .blog-grid { grid-template-columns:1fr; }
+}

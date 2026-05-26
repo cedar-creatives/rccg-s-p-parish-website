@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Submit your prayer request to RCCG S&P Parish. Our prayer team will stand in agreement with you before God."/>
+  <meta property="og:title" content="Prayer Request — RCCG S&P Parish"/>
+  <meta property="og:description" content="Submit your prayer request and let our team pray with you."/>
+  <meta property="og:type" content="website"/>
+  <title>Prayer Request — RCCG S&P Parish</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/prayer.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">RCCG <span>S&P Parish</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem" class="active"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold" style="padding:8px 22px; font-size:14px;">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" aria-label="Prayer Request Banner">
+    <div class="page-hero-content reveal">
+      <p class="breadcrumb">Home &rsaquo; Prayer Request</p>
+      <h1>Prayer Request</h1>
+      <p>You are not alone. Share your need and our prayer team will stand in agreement with you before God.</p>
+    </div>
+  </header>
+
+  <!-- SCRIPTURE -->
+  <div class="scripture-banner" role="note">
+    <blockquote>
+      "Again I say to you, if two of you agree on earth about anything they ask, it will be done for them by my Father in heaven."
+      <cite>— Matthew 18:19</cite>
+    </blockquote>
+  </div>
+
+  <!-- PRAYER FORM + INFO -->
+  <section id="prayer-form" aria-labelledby="prayer-heading">
+    <div class="section-title reveal">
+      <h2 id="prayer-heading">Submit Your Prayer Request</h2>
+      <p>Every request is treated with confidentiality and prayed over by our dedicated prayer team.</p>
+    </div>
+
+    <div class="prayer-layout">
+
+      <!-- Form -->
+      <div class="prayer-form-wrap reveal">
+        <form id="prayerForm" novalidate aria-label="Prayer request form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prayerName">Your Name</label>
+              <input type="text" id="prayerName" name="prayerName" placeholder="e.g. John Adeyemi" required autocomplete="name"/>
+              <span class="error-msg" id="prayerNameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="prayerEmail">Email Address <span class="optional">(optional)</span></label>
+              <input type="email" id="prayerEmail" name="prayerEmail" placeholder="e.g. john@email.com" autocomplete="email"/>
+              <span class="error-msg" id="prayerEmailError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="prayerPhone">Phone Number <span class="optional">(optional)</span></label>
+            <input type="tel" id="prayerPhone" name="prayerPhone" placeholder="e.g. 08012345678" autocomplete="tel"/>
+          </div>
+
+          <div class="form-group">
+            <label for="prayerCategory">Prayer Category</label>
+            <select id="prayerCategory" name="prayerCategory" required aria-describedby="categoryError">
+              <option value="" disabled selected>Select a category</option>
+              <option value="healing">Healing &amp; Health</option>
+              <option value="finances">Finances &amp; Provision</option>
+              <option value="family">Family &amp; Relationships</option>
+              <option value="salvation">Salvation of a Loved One</option>
+              <option value="career">Career &amp; Business</option>
+              <option value="marriage">Marriage &amp; Fruitfulness</option>
+              <option value="spiritual">Spiritual Growth</option>
+              <option value="deliverance">Deliverance &amp; Freedom</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="error-msg" id="categoryError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="prayerRequest">Your Prayer Request</label>
+            <textarea id="prayerRequest" name="prayerRequest" rows="7"
+              placeholder="Share your prayer need here. Be as specific as you like — everything shared is kept confidential."
+              required aria-describedby="requestError"></textarea>
+            <span class="error-msg" id="requestError" role="alert"></span>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="prayerConsent" name="prayerConsent" required/>
+              <span>I understand that my request will be shared only with the prayer team and kept confidential.</span>
+            </label>
+            <span class="error-msg" id="consentError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-full">🙏 Submit Prayer Request</button>
+
+          <div class="form-success" id="prayerSuccess" hidden aria-live="polite">
+            🙌 Thank you! Your prayer request has been received. Our prayer team will be interceding for you. God bless you!
+          </div>
+        </form>
+      </div>
+
+      <!-- Info sidebar -->
+      <div class="prayer-info reveal">
+        <div class="prayer-info-card">
+          <h3>🕐 When We Pray</h3>
+          <ul class="prayer-times-list" role="list">
+            <li><strong>Daily</strong> — Our prayer team prays over all requests every morning at 6:00 AM</li>
+            <li><strong>Tuesday</strong> — Requests are lifted during Digging Deep (6:00 PM)</li>
+            <li><strong>Thursday</strong> — Faith Clinic is dedicated to intercession (6:00 PM)</li>
+            <li><strong>Sunday</strong> — Altar call and corporate prayer after service</li>
+          </ul>
+        </div>
+
+        <div class="prayer-info-card prayer-info-card--promise">
+          <h3>📖 God's Promise</h3>
+          <p>"The prayer of a righteous person is powerful and effective." — James 5:16</p>
+          <p>"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God." — Philippians 4:6</p>
+        </div>
+
+        <div class="prayer-info-card">
+          <h3>📞 Need Urgent Prayer?</h3>
+          <p>For urgent prayer needs, contact us directly:</p>
+          <a href="tel:+2348000000000" class="prayer-contact-link">📞 +234 800 000 0000</a>
+          <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" class="prayer-contact-link">💬 WhatsApp Us</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
+      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
+  <script src="js/main.js"></script>
+  <script src="js/prayer.js"></script>
+</body>
+</html>

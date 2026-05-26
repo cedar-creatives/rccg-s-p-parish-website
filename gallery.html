@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Photo gallery of RCCG S&P Parish — Sunday services, outreach programmes, events and ministry moments in Lagos, Nigeria."/>
+  <meta property="og:title" content="Gallery — RCCG S&P Parish"/>
+  <meta property="og:description" content="Moments from our services, events and community outreach."/>
+  <meta property="og:type" content="website"/>
+
+  <title>Gallery — RCCG S&P Parish</title>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/gallery.css"/>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">RCCG <span>S&P Parish</span></div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem" class="active"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold" style="padding:8px 22px; font-size:14px;">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <header class="page-hero" aria-label="Gallery Banner">
+    <div class="page-hero-content reveal">
+      <p class="breadcrumb">Home &rsaquo; Gallery</p>
+      <h1>Our Photo Gallery</h1>
+      <p>Moments of worship, fellowship, outreach and community — captured in pictures.</p>
+    </div>
+  </header>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery" aria-labelledby="gallery-heading">
+
+    <div class="section-title reveal">
+      <h2 id="gallery-heading">Life at RCCG S&P Parish</h2>
+      <p>Browse through our cherished moments together.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="gallery-filters reveal" role="group" aria-label="Filter gallery by category">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All Photos</button>
+      <button class="filter-btn" data-filter="sunday-service" aria-pressed="false">Sunday Service</button>
+      <button class="filter-btn" data-filter="outreach" aria-pressed="false">Outreach</button>
+      <button class="filter-btn" data-filter="events" aria-pressed="false">Events</button>
+      <button class="filter-btn" data-filter="ministries" aria-pressed="false">Ministries</button>
+    </div>
+
+    <!-- Photo Count -->
+    <p class="gallery-count reveal" id="galleryCount" aria-live="polite">
+      Showing <span id="visibleCount">18</span> of <span id="totalCount">18</span> photos
+    </p>
+
+    <!-- Gallery Grid -->
+    <!-- 
+      HOW TO ADD YOUR OWN PHOTOS:
+      1. Create a folder: images/gallery/
+      2. Drop your photos in there (e.g. sunday-01.jpg, outreach-01.jpg)
+      3. Update the src="" and alt="" on each <img> below
+      4. Update data-category="" to match the filter buttons:
+         - "sunday-service"
+         - "outreach"
+         - "events"
+         - "ministries"
+      5. Update data-caption="" with a short description shown in the lightbox
+    -->
+    <div class="gallery-grid" id="galleryGrid" role="list">
+
+      <!-- Sunday Service photos -->
+      <div class="gallery-item reveal" data-category="sunday-service" role="listitem">
+        <button class="gallery-thumb" 
+                data-src="images/gallery/sunday-01.jpg"
+                data-caption="Sunday morning worship service"
+                data-category-label="Sunday Service"
+                aria-label="Open photo: Sunday morning worship service">
+          <img src="images/gallery/sunday-01.jpg" alt="Sunday morning worship service" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Sunday morning worship service</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="sunday-service" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/sunday-02.jpg"
+                data-caption="Praise and worship session"
+                data-category-label="Sunday Service"
+                aria-label="Open photo: Praise and worship session">
+          <img src="images/gallery/sunday-02.jpg" alt="Praise and worship session" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Praise and worship session</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="sunday-service" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/sunday-03.jpg"
+                data-caption="Pastor delivering the Word"
+                data-category-label="Sunday Service"
+                aria-label="Open photo: Pastor delivering the Word">
+          <img src="images/gallery/sunday-03.jpg" alt="Pastor delivering the Word" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Pastor delivering the Word</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="sunday-service" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/sunday-04.jpg"
+                data-caption="Congregation in prayer"
+                data-category-label="Sunday Service"
+                aria-label="Open photo: Congregation in prayer">
+          <img src="images/gallery/sunday-04.jpg" alt="Congregation in prayer" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Congregation in prayer</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Outreach photos -->
+      <div class="gallery-item reveal" data-category="outreach" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/outreach-01.jpg"
+                data-caption="Community outreach programme"
+                data-category-label="Outreach"
+                aria-label="Open photo: Community outreach programme">
+          <img src="images/gallery/outreach-01.jpg" alt="Community outreach programme" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Community outreach programme</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="outreach" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/outreach-02.jpg"
+                data-caption="Evangelism team in the streets"
+                data-category-label="Outreach"
+                aria-label="Open photo: Evangelism team in the streets">
+          <img src="images/gallery/outreach-02.jpg" alt="Evangelism team in the streets" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Evangelism team in the streets</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="outreach" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/outreach-03.jpg"
+                data-caption="Widows and orphans support programme"
+                data-category-label="Outreach"
+                aria-label="Open photo: Widows and orphans support programme">
+          <img src="images/gallery/outreach-03.jpg" alt="Widows and orphans support programme" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Widows and orphans support programme</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="outreach" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/outreach-04.jpg"
+                data-caption="Medical outreach in the community"
+                data-category-label="Outreach"
+                aria-label="Open photo: Medical outreach in the community">
+          <img src="images/gallery/outreach-04.jpg" alt="Medical outreach in the community" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Medical outreach in the community</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Events photos -->
+      <div class="gallery-item reveal" data-category="events" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/event-01.jpg"
+                data-caption="Annual thanksgiving service"
+                data-category-label="Events"
+                aria-label="Open photo: Annual thanksgiving service">
+          <img src="images/gallery/event-01.jpg" alt="Annual thanksgiving service" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Annual thanksgiving service</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="events" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/event-02.jpg"
+                data-caption="Church anniversary celebration"
+                data-category-label="Events"
+                aria-label="Open photo: Church anniversary celebration">
+          <img src="images/gallery/event-02.jpg" alt="Church anniversary celebration" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Church anniversary celebration</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="events" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/event-03.jpg"
+                data-caption="Night of breakthrough vigil"
+                data-category-label="Events"
+                aria-label="Open photo: Night of breakthrough vigil">
+          <img src="images/gallery/event-03.jpg" alt="Night of breakthrough vigil" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Night of breakthrough vigil</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="events" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/event-04.jpg"
+                data-caption="Christmas carol service"
+                data-category-label="Events"
+                aria-label="Open photo: Christmas carol service">
+          <img src="images/gallery/event-04.jpg" alt="Christmas carol service" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Christmas carol service</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Ministries photos -->
+      <div class="gallery-item reveal" data-category="ministries" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/ministry-01.jpg"
+                data-caption="Youth ministry gathering"
+                data-category-label="Ministries"
+                aria-label="Open photo: Youth ministry gathering">
+          <img src="images/gallery/ministry-01.jpg" alt="Youth ministry gathering" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Youth ministry gathering</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="ministries" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/ministry-02.jpg"
+                data-caption="Children's ministry in session"
+                data-category-label="Ministries"
+                aria-label="Open photo: Children's ministry in session">
+          <img src="images/gallery/ministry-02.jpg" alt="Children's ministry in session" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Children's ministry in session</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="ministries" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/ministry-03.jpg"
+                data-caption="Choir rehearsal and performance"
+                data-category-label="Ministries"
+                aria-label="Open photo: Choir rehearsal and performance">
+          <img src="images/gallery/ministry-03.jpg" alt="Choir rehearsal and performance" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Choir rehearsal and performance</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="ministries" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/ministry-04.jpg"
+                data-caption="Ushering unit in service"
+                data-category-label="Ministries"
+                aria-label="Open photo: Ushering unit in service">
+          <img src="images/gallery/ministry-04.jpg" alt="Ushering unit in service" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Ushering unit in service</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="ministries" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/ministry-05.jpg"
+                data-caption="Media team at work"
+                data-category-label="Ministries"
+                aria-label="Open photo: Media team at work">
+          <img src="images/gallery/ministry-05.jpg" alt="Media team at work" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Media team at work</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-item reveal" data-category="ministries" role="listitem">
+        <button class="gallery-thumb"
+                data-src="images/gallery/ministry-06.jpg"
+                data-caption="Evangelism team prayer before outreach"
+                data-category-label="Ministries"
+                aria-label="Open photo: Evangelism team prayer before outreach">
+          <img src="images/gallery/ministry-06.jpg" alt="Evangelism team prayer before outreach" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-zoom" aria-hidden="true">🔍</span>
+            <span class="gallery-caption-preview">Evangelism team prayer before outreach</span>
+          </div>
+        </button>
+      </div>
+
+    </div><!-- end .gallery-grid -->
+
+    <!-- Empty state (shown when a filter has no results) -->
+    <div class="gallery-empty" id="galleryEmpty" hidden aria-live="polite">
+      <span aria-hidden="true">📷</span>
+      <p>No photos in this category yet. Check back soon!</p>
+    </div>
+
+  </section>
+
+  <!-- ===== CALL TO ACTION ===== -->
+  <section class="gallery-cta" aria-label="Share your photos">
+    <div class="gallery-cta-inner reveal">
+      <h2>Have photos to share?</h2>
+      <p>If you captured a special moment at RCCG S&P Parish, we'd love to feature it here. Send your photos to us and we'll add them to the gallery.</p>
+      <a href="index.html#contact" class="btn btn-gold">Send Us Your Photos</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
+      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-container">
+
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">✕</button>
+
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" id="lightboxImg" class="lightbox-img"/>
+        <div class="lightbox-spinner" id="lightboxSpinner" aria-hidden="true"></div>
+      </div>
+
+      <div class="lightbox-footer">
+        <span class="lightbox-category" id="lightboxCategory"></span>
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

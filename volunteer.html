@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Volunteer at RCCG S&P Parish. Register to serve in any of our ministries and use your gifts for God's kingdom."/>
+  <meta property="og:title" content="Volunteer — RCCG S&P Parish"/>
+  <meta property="og:description" content="Register to serve and use your gifts at RCCG S&P Parish."/>
+  <meta property="og:type" content="website"/>
+  <title>Volunteer — RCCG S&P Parish</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/volunteer.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">RCCG <span>S&P Parish</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem" class="active"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold" style="padding:8px 22px; font-size:14px;">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" aria-label="Volunteer Banner">
+    <div class="page-hero-content reveal">
+      <p class="breadcrumb">Home &rsaquo; Volunteer</p>
+      <h1>Serve With Us</h1>
+      <p>Every gift matters. Every hand counts. Find your place in God's work at RCCG S&P Parish.</p>
+    </div>
+  </header>
+
+  <!-- WHY SERVE -->
+  <section class="why-serve-section" aria-labelledby="why-heading">
+    <div class="section-title reveal">
+      <h2 id="why-heading">Why Serve?</h2>
+      <p>Service is not a duty — it is a privilege and a calling.</p>
+    </div>
+    <div class="why-serve-grid">
+      <div class="why-serve-card reveal">
+        <span class="why-serve-icon" aria-hidden="true">🎯</span>
+        <h3>Discover Your Purpose</h3>
+        <p>Serving in ministry helps you identify and develop the gifts God has placed inside you.</p>
+      </div>
+      <div class="why-serve-card reveal">
+        <span class="why-serve-icon" aria-hidden="true">🤝</span>
+        <h3>Build Community</h3>
+        <p>Volunteering connects you with like-minded believers and builds deep, lasting friendships.</p>
+      </div>
+      <div class="why-serve-card reveal">
+        <span class="why-serve-icon" aria-hidden="true">🌱</span>
+        <h3>Grow Spiritually</h3>
+        <p>There is no faster path to spiritual maturity than serving others with a heart of love.</p>
+      </div>
+      <div class="why-serve-card reveal">
+        <span class="why-serve-icon" aria-hidden="true">👑</span>
+        <h3>Make an Eternal Impact</h3>
+        <p>Every act of service in God's kingdom carries eternal weight and reward (Matthew 25:21).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER FORM -->
+  <section id="volunteer-form" aria-labelledby="vol-form-heading">
+    <div class="section-title reveal">
+      <h2 id="vol-form-heading">Volunteer Registration</h2>
+      <p>Fill in the form below and a ministry leader will reach out to you within 48 hours.</p>
+    </div>
+
+    <div class="volunteer-layout">
+
+      <div class="volunteer-form-wrap reveal">
+        <form id="volunteerForm" novalidate aria-label="Volunteer registration form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="volFirstName">First Name</label>
+              <input type="text" id="volFirstName" name="volFirstName" placeholder="e.g. John" required autocomplete="given-name"/>
+              <span class="error-msg" id="firstNameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="volLastName">Last Name</label>
+              <input type="text" id="volLastName" name="volLastName" placeholder="e.g. Adeyemi" required autocomplete="family-name"/>
+              <span class="error-msg" id="lastNameError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="volEmail">Email Address</label>
+              <input type="email" id="volEmail" name="volEmail" placeholder="e.g. john@email.com" required autocomplete="email"/>
+              <span class="error-msg" id="volEmailError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="volPhone">Phone Number</label>
+              <input type="tel" id="volPhone" name="volPhone" placeholder="e.g. 08012345678" required autocomplete="tel"/>
+              <span class="error-msg" id="volPhoneError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="volAge">Age Group</label>
+              <select id="volAge" name="volAge" required>
+                <option value="" disabled selected>Select age group</option>
+                <option value="13-17">13 – 17</option>
+                <option value="18-25">18 – 25</option>
+                <option value="26-35">26 – 35</option>
+                <option value="36-50">36 – 50</option>
+                <option value="51+">51 and above</option>
+              </select>
+              <span class="error-msg" id="ageError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="volStatus">Member Status</label>
+              <select id="volStatus" name="volStatus" required>
+                <option value="" disabled selected>Select status</option>
+                <option value="member">Church Member</option>
+                <option value="new">New Member (less than 6 months)</option>
+                <option value="visitor">Regular Visitor</option>
+              </select>
+              <span class="error-msg" id="statusError" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Ministry checkboxes -->
+          <div class="form-group">
+            <label>Preferred Ministry / Ministries <span class="required-star" aria-hidden="true">*</span></label>
+            <p class="form-hint">Select all that interest you — we'll find the best fit.</p>
+            <div class="ministry-checkboxes" role="group" aria-label="Select preferred ministries">
+              <label class="checkbox-label"><input type="checkbox" name="ministry" value="youth"/> <span>✝️ Youth Ministry</span></label>
+              <label class="checkbox-label"><input type="checkbox" name="ministry" value="children"/> <span>⭐ Children Ministry</span></label>
+              <label class="checkbox-label"><input type="checkbox" name="ministry" value="choir"/> <span>🎵 Choir</span></label>
+              <label class="checkbox-label"><input type="checkbox" name="ministry" value="ushering"/> <span>🤝 Ushering Unit</span></label>
+              <label class="checkbox-label"><input type="checkbox" name="ministry" value="media"/> <span>📷 Media Team</span></label>
+              <label class="checkbox-label"><input type="checkbox" name="ministry" value="evangelism"/> <span>📢 Evangelism Team</span></label>
+            </div>
+            <span class="error-msg" id="ministryError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="volAvailability">Availability</label>
+            <select id="volAvailability" name="volAvailability">
+              <option value="" disabled selected>When are you available?</option>
+              <option value="sundays">Sundays only</option>
+              <option value="weekdays">Weekdays (evenings)</option>
+              <option value="saturdays">Saturdays</option>
+              <option value="flexible">Flexible / All of the above</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="volSkills">Skills / Gifts <span class="optional">(optional)</span></label>
+            <textarea id="volSkills" name="volSkills" rows="4"
+              placeholder="e.g. I can play the keyboard, I have video editing experience, I'm good with children..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="volWhy">Why do you want to volunteer? <span class="optional">(optional)</span></label>
+            <textarea id="volWhy" name="volWhy" rows="4"
+              placeholder="Share your motivation for serving..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-full">
+            🙋 Submit Volunteer Registration
+          </button>
+
+          <div class="form-success" id="volunteerSuccess" hidden aria-live="polite">
+            🎉 Thank you for registering! A ministry leader will contact you within 48 hours. We're excited to serve alongside you!
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="volunteer-sidebar reveal">
+        <div class="vol-sidebar-card">
+          <h3>📋 What Happens Next?</h3>
+          <ol class="vol-steps" role="list">
+            <li><strong>Submit</strong> your registration form</li>
+            <li><strong>We review</strong> your preferences and availability</li>
+            <li><strong>A leader contacts</strong> you within 48 hours</li>
+            <li><strong>Orientation</strong> — meet the team and learn the ropes</li>
+            <li><strong>Start serving</strong> and making an impact!</li>
+          </ol>
+        </div>
+
+        <div class="vol-sidebar-card vol-sidebar-card--dark">
+          <h3>📖 A Word for You</h3>
+          <blockquote>
+            "Each of you should use whatever gift you have received to serve others, as faithful stewards of God's grace in its various forms."
+          </blockquote>
+          <cite>— 1 Peter 4:10</cite>
+        </div>
+
+        <div class="vol-sidebar-card">
+          <h3>❓ Have Questions?</h3>
+          <p>Not sure which ministry is right for you? Talk to us and we'll help you find your fit.</p>
+          <a href="contact.html" class="btn btn-gold" style="margin-top:12px; display:inline-block;">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
+      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
+  <script src="js/main.js"></script>
+  <script src="js/volunteer.js"></script>
+</body>
+</html>

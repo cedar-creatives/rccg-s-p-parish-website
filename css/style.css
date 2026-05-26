@@ -138,6 +138,149 @@ nav.scrolled {
   width: 100%;
 }
 
+/* Give button — override active/hover so it never gets the underline treatment */
+.nav-links .btn-gold {
+  color: #111 !important;
+}
+
+.nav-links .btn-gold:hover,
+.nav-links .btn-gold.active {
+  color: #111 !important;
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.55);
+}
+
+.nav-links .btn-gold::after,
+.nav-links .btn-gold.active::after {
+  display: none !important;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.nav-item {
+  position: relative;
+}
+
+/* The parent trigger button (not a link) */
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  padding: 6px 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.nav-dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width var(--transition);
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle.active {
+  color: var(--gold);
+}
+
+.nav-dropdown-toggle:hover::after,
+.nav-dropdown-toggle.active::after {
+  width: 100%;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  transition: transform var(--transition);
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.nav-item.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(7, 21, 47, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 10px 8px;
+  min-width: 200px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+/* Small triangle pointer */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top: none;
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.nav-item.open .nav-dropdown,
+.nav-item:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a.active {
+  background: rgba(212,175,55,0.15);
+  color: var(--gold);
+}
+
+.nav-dropdown a::after {
+  display: none; /* no underline on dropdown items */
+}
+
+.nav-dropdown-icon {
+  font-size: 16px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
 /* Hamburger Button */
 .hamburger {
   display: none;
@@ -638,7 +781,7 @@ footer p {
   }
 }
 
-/* ===== RESPONSIVE: TABLET (768px) ===== */
+/* ===== RESPONSIVE: TABLET (900px) ===== */
 @media (max-width: 900px) {
   .hero h1 {
     font-size: 48px;
@@ -655,11 +798,8 @@ footer p {
   .about-text h3 {
     font-size: 30px;
   }
-}
 
-/* ===== RESPONSIVE: MOBILE (600px) ===== */
-@media (max-width: 600px) {
-  /* Show hamburger, hide links by default */
+  /* Show hamburger at tablet — nav is too wide with dropdowns */
   .hamburger {
     display: flex;
   }
@@ -670,22 +810,79 @@ footer p {
     right: -100%;
     height: 100vh;
     width: 75%;
-    max-width: 300px;
+    max-width: 320px;
     background: var(--dark);
     flex-direction: column;
     justify-content: center;
-    gap: 36px;
-    padding: 60px 40px;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 80px 40px 60px;
     transition: right 0.4s ease;
     box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    overflow-y: auto;
   }
 
   .nav-links.open {
     right: 0;
   }
 
-  .nav-links a {
-    font-size: 20px;
+  .nav-links > .nav-item > a {
+    font-size: 18px;
+  }
+
+  /* Mobile dropdown — inline accordion */
+  .nav-item {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-dropdown-toggle {
+    font-size: 18px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255,255,255,0.05);
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    padding: 6px 0 6px 16px;
+    min-width: unset;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    pointer-events: none;
+    margin-top: 0;
+  }
+
+  .nav-dropdown::before { display: none; }
+
+  .nav-item.open .nav-dropdown {
+    max-height: 300px;
+    padding: 6px 0 6px 16px;
+    pointer-events: auto;
+    margin-top: 8px;
+  }
+
+  .nav-dropdown a {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  /* Give button in mobile nav */
+  .nav-links .btn-gold {
+    margin-top: 8px;
+    padding: 12px 28px !important;
+    font-size: 15px !important;
+    align-self: flex-start;
   }
 
   /* Nav overlay when menu open */
@@ -696,6 +893,14 @@ footer p {
     background: rgba(0,0,0,0.5);
     z-index: 999;
   }
+}
+
+/* ===== RESPONSIVE: MOBILE (600px) ===== */
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 100px 20px 60px;
+  }
 
   nav {
     padding: 16px 5%;
@@ -703,10 +908,6 @@ footer p {
 
   section {
     padding: 70px 5%;
-  }
-
-  .hero {
-    padding: 100px 20px 60px;
   }
 
   .hero h1 {
@@ -741,4 +942,80 @@ footer p {
     height: 44px;
     font-size: 17px;
   }
+}
+
+/* ===== WHATSAPP FLOATING BUTTON ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  z-index: 998;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition);
+  animation: waPulse 2.5s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+  animation: none;
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 66px;
+  background: #111;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right: none;
+  border-left-color: #111;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+}
+
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
+  50%       { box-shadow: 0 8px 36px rgba(37,211,102,0.7); }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    bottom: 80px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+  .whatsapp-float svg { width:26px; height:26px; }
 }

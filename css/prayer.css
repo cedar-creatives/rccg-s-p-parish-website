@@ -1,0 +1,100 @@
+/* ==============================
+   RCCG S&P Parish — prayer.css
+   ============================== */
+
+.page-hero {
+  min-height: 55vh;
+  background:
+    linear-gradient(rgba(7,21,47,0.85), rgba(7,21,47,0.85)),
+    url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=1600&auto=format&fit=crop')
+    center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 140px 8% 80px; color: white;
+}
+.page-hero-content { max-width: 750px; }
+.breadcrumb { font-size:14px; color:var(--gold); letter-spacing:1px; margin-bottom:16px; font-weight:500; }
+.page-hero h1 { font-size:56px; font-weight:800; line-height:1.15; margin-bottom:20px; }
+.page-hero p  { font-size:18px; color:#dbeafe; line-height:1.7; }
+
+.scripture-banner { background:var(--blue); padding:28px 8%; text-align:center; }
+.scripture-banner blockquote { max-width:750px; margin:0 auto; font-size:17px; font-weight:500; color:white; line-height:1.7; font-style:italic; }
+.scripture-banner cite { display:block; margin-top:10px; font-size:13px; color:var(--gold); font-style:normal; font-weight:700; }
+
+.prayer-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 50px;
+  align-items: start;
+}
+
+.prayer-form-wrap {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { display:flex; flex-direction:column; gap:7px; margin-bottom:20px; }
+.form-group label { font-weight:600; font-size:14px; color:var(--blue); }
+.optional { font-weight:400; color:var(--text-light); font-size:13px; }
+
+select {
+  width:100%; padding:16px 20px; border:2px solid transparent;
+  border-radius:var(--radius-sm); font-size:15px; outline:none;
+  font-family:'Poppins',sans-serif; background:white; color:#0f172a;
+  transition:border-color var(--transition), box-shadow var(--transition);
+  cursor:pointer;
+}
+select:focus { border-color:var(--blue); box-shadow:0 0 0 4px rgba(11,61,145,0.1); }
+select.error  { border-color:#ef4444; }
+
+.checkbox-group { flex-direction:row; align-items:flex-start; gap:0; }
+.checkbox-label {
+  display:flex; align-items:flex-start; gap:12px;
+  cursor:pointer; font-size:14px; color:var(--text-body); line-height:1.6;
+}
+.checkbox-label input[type="checkbox"] {
+  width:18px; height:18px; flex-shrink:0; margin-top:2px;
+  accent-color:var(--blue); cursor:pointer;
+}
+
+.btn-full { width:100%; justify-content:center; display:flex; align-items:center; gap:8px; }
+
+/* Prayer info sidebar */
+.prayer-info { display:flex; flex-direction:column; gap:20px; }
+
+.prayer-info-card {
+  background:white; border-radius:var(--radius-md);
+  padding:26px 24px; box-shadow:var(--shadow-sm);
+  border:1px solid rgba(0,0,0,0.05);
+}
+.prayer-info-card h3 { font-size:17px; color:var(--blue); font-weight:700; margin-bottom:14px; }
+.prayer-info-card p  { color:var(--text-body); font-size:14px; line-height:1.75; margin-bottom:12px; }
+.prayer-info-card p:last-child { margin-bottom:0; }
+
+.prayer-info-card--promise { background:var(--dark); border-top:4px solid var(--gold); }
+.prayer-info-card--promise h3 { color:var(--gold); }
+.prayer-info-card--promise p  { color:#dbeafe; }
+
+.prayer-times-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.prayer-times-list li { font-size:14px; color:var(--text-body); line-height:1.6; padding-left:16px; position:relative; }
+.prayer-times-list li::before { content:'✓'; position:absolute; left:0; color:var(--gold); font-weight:800; }
+
+.prayer-contact-link {
+  display:flex; align-items:center; gap:8px;
+  color:var(--blue); font-size:15px; font-weight:600;
+  text-decoration:none; margin-top:10px;
+  transition:color var(--transition);
+}
+.prayer-contact-link:hover { color:var(--gold); }
+
+@media (max-width:900px) {
+  .page-hero h1 { font-size:42px; }
+  .prayer-layout { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .page-hero h1 { font-size:32px; }
+  .prayer-form-wrap { padding:28px 20px; }
+  .form-row { grid-template-columns:1fr; }
+}

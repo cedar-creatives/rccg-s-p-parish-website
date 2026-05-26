@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Listen to and watch sermons from RCCG S&P Parish. Life-transforming messages from Pastor Femi Abolarin and guest ministers."/>
+  <meta property="og:title" content="Sermons — RCCG S&P Parish"/>
+  <meta property="og:description" content="Life-transforming messages from RCCG S&P Parish, Lagos."/>
+  <meta property="og:type" content="website"/>
+
+  <title>Sermons — RCCG S&P Parish</title>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/sermons.css"/>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">RCCG <span>S&P Parish</span></div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="sermons.html" class="nav-link active">Sermons</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Explore <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="ministries.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✝️</span> Ministries</a></li>
+          <li role="none"><a href="events.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📅</span> Events</a></li>
+          <li role="none"><a href="gallery.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📷</span> Gallery</a></li>
+          <li role="none"><a href="blog.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">📝</span> Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Connect <span class="dropdown-arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown" role="menu">
+          <li role="none"><a href="prayer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙏</span> Prayer Request</a></li>
+          <li role="none"><a href="volunteer.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">🙋</span> Volunteer</a></li>
+          <li role="none"><a href="contact.html" role="menuitem"><span class="nav-dropdown-icon" aria-hidden="true">✉️</span> Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="give.html" class="nav-link btn btn-gold" style="padding:8px 22px; font-size:14px;">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <header class="page-hero" aria-label="Sermons Banner">
+    <div class="page-hero-content reveal">
+      <p class="breadcrumb">Home &rsaquo; Sermons</p>
+      <h1>Sermons &amp; Messages</h1>
+      <p>Life-transforming messages to build your faith, renew your mind and strengthen your walk with God.</p>
+    </div>
+  </header>
+
+  <!-- ===== FEATURED SERMON (Latest) ===== -->
+  <section class="featured-sermon" id="latest" aria-labelledby="latest-heading">
+    <div class="section-title reveal">
+      <h2 id="latest-heading">Latest Message</h2>
+      <p>Watch or listen to our most recent sermon.</p>
+    </div>
+
+    <div class="featured-sermon-inner reveal">
+      <!--
+        HOW TO EMBED A YOUTUBE VIDEO:
+        1. Go to the YouTube video
+        2. Click Share → Embed
+        3. Copy the src URL (looks like: https://www.youtube.com/embed/VIDEO_ID)
+        4. Paste it into the iframe src below
+        5. Update the title attribute to match the sermon title
+      -->
+      <div class="sermon-video-wrap" role="region" aria-label="Latest sermon video">
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="Latest sermon: Replace this with your YouTube embed URL"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="featured-sermon-details">
+        <span class="sermon-series-tag">Sunday Service</span>
+        <h3>Walking in Divine Purpose</h3>
+        <p class="sermon-speaker">
+          <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+        </p>
+        <p class="sermon-date">
+          <span aria-hidden="true">📅</span> Sunday, 1 June 2025
+        </p>
+        <p class="sermon-desc">
+          In this powerful message, Pastor Femi unpacks what it means to walk in the purpose God has ordained for your life — drawing from the story of Jeremiah and the promises of God for every believer.
+        </p>
+        <div class="sermon-actions">
+          <a href="#" class="btn btn-gold" aria-label="Download audio for Walking in Divine Purpose">
+            ⬇ Download Audio
+          </a>
+          <a href="#" class="btn btn-outline-blue" aria-label="Read notes for Walking in Divine Purpose">
+            📄 Sermon Notes
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERMON ARCHIVE ===== -->
+  <section id="archive" aria-labelledby="archive-heading">
+    <div class="section-title reveal">
+      <h2 id="archive-heading">Sermon Archive</h2>
+      <p>Browse all our messages by series or topic.</p>
+    </div>
+
+    <!-- Search + Filter row -->
+    <div class="sermon-controls reveal">
+      <div class="sermon-search-wrap" role="search">
+        <label for="sermonSearch" class="sr-only">Search sermons</label>
+        <input
+          type="search"
+          id="sermonSearch"
+          placeholder="Search by title, speaker or topic..."
+          autocomplete="off"
+          aria-label="Search sermons"
+        />
+        <span class="search-icon" aria-hidden="true">🔍</span>
+      </div>
+
+      <div class="sermon-filters" role="group" aria-label="Filter sermons by series">
+        <button class="sermon-filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="sermon-filter-btn" data-filter="sunday" aria-pressed="false">Sunday Service</button>
+        <button class="sermon-filter-btn" data-filter="digging-deep" aria-pressed="false">Digging Deep</button>
+        <button class="sermon-filter-btn" data-filter="faith-clinic" aria-pressed="false">Faith Clinic</button>
+        <button class="sermon-filter-btn" data-filter="special" aria-pressed="false">Special</button>
+      </div>
+    </div>
+
+    <!-- Sermon count -->
+    <p class="sermon-count reveal" aria-live="polite">
+      Showing <span id="sermonVisible">12</span> of <span id="sermonTotal">12</span> messages
+    </p>
+
+    <!--
+      HOW TO ADD A SERMON:
+      1. Copy one <article class="sermon-card"> block below
+      2. Update data-series to: sunday | digging-deep | faith-clinic | special
+      3. Update data-title with the sermon title (used for search)
+      4. Update data-speaker with the speaker name (used for search)
+      5. Fill in the title, speaker, date, scripture, description
+      6. Update the audio href and notes href (or remove those links if not available)
+    -->
+    <div class="sermons-grid" id="sermonsGrid">
+
+      <!-- Sermon 1 -->
+      <article class="sermon-card reveal" data-series="sunday" data-title="walking in divine purpose" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series sunday">Sunday Service</span>
+          <span class="sermon-card-date">1 Jun 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Walking in Divine Purpose</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Jeremiah 29:11
+          </p>
+          <p class="sermon-card-desc">
+            Discover what it means to walk in the purpose God has ordained for your life.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Walking in Divine Purpose">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Walking in Divine Purpose">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 2 -->
+      <article class="sermon-card reveal" data-series="digging-deep" data-title="the power of the word" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series digging-deep">Digging Deep</span>
+          <span class="sermon-card-date">27 May 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>The Power of the Word</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Hebrews 4:12
+          </p>
+          <p class="sermon-card-desc">
+            Understanding the living, active nature of God's Word and how it transforms every area of life.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: The Power of the Word">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: The Power of the Word">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 3 -->
+      <article class="sermon-card reveal" data-series="faith-clinic" data-title="praying through" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series faith-clinic">Faith Clinic</span>
+          <span class="sermon-card-date">22 May 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Praying Through</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Luke 18:1–8
+          </p>
+          <p class="sermon-card-desc">
+            Why persistence in prayer is not a sign of weak faith — it is the very nature of faith itself.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Praying Through">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Praying Through">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 4 -->
+      <article class="sermon-card reveal" data-series="sunday" data-title="the grace advantage" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series sunday">Sunday Service</span>
+          <span class="sermon-card-date">18 May 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>The Grace Advantage</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Romans 5:17
+          </p>
+          <p class="sermon-card-desc">
+            How the grace of God gives believers an unfair advantage in every situation of life.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: The Grace Advantage">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: The Grace Advantage">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 5 -->
+      <article class="sermon-card reveal" data-series="special" data-title="arise and shine" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series special">Special Service</span>
+          <span class="sermon-card-date">11 May 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Arise and Shine</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Isaiah 60:1
+          </p>
+          <p class="sermon-card-desc">
+            A prophetic charge to the church — this is your season to rise, shine and take your place in God's plan.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Arise and Shine">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Arise and Shine">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 6 -->
+      <article class="sermon-card reveal" data-series="digging-deep" data-title="faith that works" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series digging-deep">Digging Deep</span>
+          <span class="sermon-card-date">6 May 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Faith That Works</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> James 2:17–26
+          </p>
+          <p class="sermon-card-desc">
+            Faith without works is dead — a practical study on how genuine faith always produces visible results.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Faith That Works">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Faith That Works">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 7 -->
+      <article class="sermon-card reveal" data-series="sunday" data-title="the blessing of obedience" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series sunday">Sunday Service</span>
+          <span class="sermon-card-date">4 May 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>The Blessing of Obedience</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Deuteronomy 28:1–14
+          </p>
+          <p class="sermon-card-desc">
+            Obedience to God is not a burden — it is the pathway to every blessing He has promised.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: The Blessing of Obedience">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: The Blessing of Obedience">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 8 -->
+      <article class="sermon-card reveal" data-series="faith-clinic" data-title="healing is yours" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series faith-clinic">Faith Clinic</span>
+          <span class="sermon-card-date">24 Apr 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Healing Is Yours</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Isaiah 53:5
+          </p>
+          <p class="sermon-card-desc">
+            A faith-building message on divine healing — what the Word says and how to receive it by faith.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Healing Is Yours">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Healing Is Yours">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 9 -->
+      <article class="sermon-card reveal" data-series="sunday" data-title="kingdom citizenship" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series sunday">Sunday Service</span>
+          <span class="sermon-card-date">20 Apr 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Kingdom Citizenship</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Philippians 3:20
+          </p>
+          <p class="sermon-card-desc">
+            Understanding your identity as a citizen of heaven and what that means for how you live on earth.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Kingdom Citizenship">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Kingdom Citizenship">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 10 -->
+      <article class="sermon-card reveal" data-series="digging-deep" data-title="the holy spirit your helper" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series digging-deep">Digging Deep</span>
+          <span class="sermon-card-date">15 Apr 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>The Holy Spirit: Your Helper</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> John 14:26
+          </p>
+          <p class="sermon-card-desc">
+            Who the Holy Spirit is, what He does, and how to partner with Him in your daily life.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: The Holy Spirit: Your Helper">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: The Holy Spirit: Your Helper">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 11 -->
+      <article class="sermon-card reveal" data-series="special" data-title="easter sunday resurrection power" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series special">Special Service</span>
+          <span class="sermon-card-date">20 Apr 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Resurrection Power</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Romans 8:11
+          </p>
+          <p class="sermon-card-desc">
+            Easter Sunday message — the same power that raised Jesus from the dead lives in every believer.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Resurrection Power">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Resurrection Power">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+      <!-- Sermon 12 -->
+      <article class="sermon-card reveal" data-series="faith-clinic" data-title="breaking every chain" data-speaker="pastor femi abolarin">
+        <div class="sermon-card-header">
+          <span class="sermon-series faith-clinic">Faith Clinic</span>
+          <span class="sermon-card-date">10 Apr 2025</span>
+        </div>
+        <div class="sermon-card-body">
+          <h3>Breaking Every Chain</h3>
+          <p class="sermon-card-speaker">
+            <span aria-hidden="true">🎤</span> Pastor Femi Abolarin
+          </p>
+          <p class="sermon-card-scripture">
+            <span aria-hidden="true">📖</span> Acts 16:25–26
+          </p>
+          <p class="sermon-card-desc">
+            Praise and prayer as weapons — how worship in the midnight hour breaks every chain of bondage.
+          </p>
+        </div>
+        <div class="sermon-card-footer">
+          <a href="#" class="sermon-media-btn" aria-label="Play audio: Breaking Every Chain">
+            ▶ Play Audio
+          </a>
+          <a href="#" class="sermon-media-btn sermon-media-btn--outline" aria-label="Download: Breaking Every Chain">
+            ⬇ Download
+          </a>
+        </div>
+      </article>
+
+    </div><!-- end .sermons-grid -->
+
+    <!-- No results state -->
+    <div class="sermons-empty" id="sermonsEmpty" hidden aria-live="polite">
+      <span aria-hidden="true">🎙️</span>
+      <p id="sermonsEmptyMsg">No sermons found. Try a different search or filter.</p>
+    </div>
+
+  </section>
+
+  <!-- ===== SUBSCRIBE CTA ===== -->
+  <section class="sermons-cta" aria-label="Subscribe for new sermons">
+    <div class="sermons-cta-inner reveal">
+      <h2>Never miss a message</h2>
+      <p>Subscribe to our YouTube channel to get notified every time a new sermon is uploaded. You can also follow us on WhatsApp for weekly sermon summaries.</p>
+      <div class="cta-buttons">
+        <a href="https://youtube.com/@rccgsandpparish" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
+          <span aria-hidden="true">▶</span> Subscribe on YouTube
+        </a>
+        <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <span aria-hidden="true">💬</span> WhatsApp Updates
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
+      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
+
+  <!-- ===== AUDIO PLAYER (fixed bottom bar) ===== -->
+  <div class="audio-player" id="audioPlayer" hidden role="region" aria-label="Audio player">
+    <div class="audio-player-inner">
+      <div class="audio-info">
+        <span class="audio-title" id="audioTitle">—</span>
+        <span class="audio-speaker" id="audioSpeaker">—</span>
+      </div>
+      <audio id="audioEl" controls preload="none" aria-label="Sermon audio player">
+        Your browser does not support the audio element.
+      </audio>
+      <button class="audio-close" id="audioClose" aria-label="Close audio player">✕</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/sermons.js"></script>
+</body>
+</html>
