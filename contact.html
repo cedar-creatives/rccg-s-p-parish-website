@@ -8,7 +8,7 @@
   <meta property="og:description" content="Get in touch with RCCG S&P Parish, Lagos."/>
   <meta property="og:type" content="website"/>
   <title>Contact — RCCG S&P Parish</title>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
@@ -18,7 +18,10 @@
 
   <!-- NAVBAR -->
   <nav id="navbar" role="navigation" aria-label="Main Navigation">
-    <div class="logo">RCCG <span>S&P Parish</span></div>
+    <a href="index.html" class="logo" aria-label="RCCG S&P Parish Home">
+      <img src="assets/logo.svg" alt="RCCG S&P Parish Logo" class="logo-img"/>
+      <span class="logo-text">RCCG <span>S&P Parish</span></span>
+    </a>
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -192,7 +195,10 @@
   <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="footer-inner">
-      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <div class="footer-logo-wrap">
+        <img src="assets/logo.svg" alt="RCCG S&P Parish" class="footer-logo-img"/>
+        <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      </div>
       <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
       <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
     </div>

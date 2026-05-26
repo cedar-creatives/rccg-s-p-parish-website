@@ -180,63 +180,135 @@
   font-size: 15px;
 }
 
-/* ===== MISSION / VISION / VALUES ===== */
+/* ===== MISSION / VISION / VALUES — stacked rows ===== */
 .mvv-section {
   background: var(--light-blue);
 }
 
-.mvv-grid {
+/* Each row: image + content side by side */
+.mvv-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.mvv-card {
-  background: white;
-  padding: 44px 32px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border-top: 5px solid var(--gold);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.mvv-card:hover {
-  transform: translateY(-8px);
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
 }
 
-.mvv-icon {
-  font-size: 44px;
+.mvv-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Reverse: content left, image right */
+.mvv-row--reverse {
+  direction: rtl;
+}
+.mvv-row--reverse > * {
+  direction: ltr;
+}
+
+/* Image side */
+.mvv-row-image {
+  position: relative;
+  min-height: 380px;
+}
+
+.mvv-row-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  margin-bottom: 20px;
 }
 
-.mvv-card h3 {
-  font-size: 24px;
-  color: var(--blue);
-  margin-bottom: 16px;
-  font-weight: 700;
+/* Content side */
+.mvv-row-content {
+  background: white;
+  padding: 50px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.mvv-card p {
-  color: var(--text-body);
-  line-height: 1.85;
-  font-size: 15px;
-}
-
-/* Featured card overrides — must come AFTER general card rules to win the cascade */
-.mvv-card--featured {
+.mvv-row-content--dark {
   background: var(--blue);
-  border-top-color: var(--gold);
 }
 
-.mvv-card--featured h3,
-.mvv-card--featured p {
+.mvv-tag {
+  display: inline-block;
+  background: var(--light-blue);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+  align-self: flex-start;
+}
+
+.mvv-tag--gold {
+  background: var(--gold);
+  color: #111;
+}
+
+.mvv-row-content h3 {
+  font-size: 32px;
+  color: var(--blue);
+  font-weight: 800;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.mvv-row-content--dark h3 {
   color: white;
 }
 
-.mvv-card--featured .mvv-icon {
-  filter: brightness(1.2);
+.mvv-row-content p {
+  color: var(--text-body);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.mvv-row-content--dark p {
+  color: #dbeafe;
+}
+
+/* Vision list */
+.mvv-vision-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mvv-vision-list li {
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: 24px;
+  position: relative;
+}
+
+.mvv-vision-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* Values list (reused, but ensure correct colour on white bg) */
+.mvv-row-content .values-list li {
+  color: var(--text-body);
+}
+
+.mvv-row-content .values-list li::before {
+  color: var(--gold);
 }
 
 .values-list {
@@ -478,8 +550,19 @@
     position: static;
   }
 
-  .mvv-grid {
+  /* MVV rows stack vertically on tablet */
+  .mvv-row,
+  .mvv-row--reverse {
     grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .mvv-row-image {
+    min-height: 280px;
+  }
+
+  .mvv-row-content {
+    padding: 36px 32px;
   }
 
   .denomination-inner {
@@ -528,6 +611,14 @@
 
   .history-block:not(:last-child)::after {
     left: 34px;
+  }
+
+  .mvv-row-content {
+    padding: 28px 22px;
+  }
+
+  .mvv-row-content h3 {
+    font-size: 26px;
   }
 
   .leader-card,

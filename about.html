@@ -10,7 +10,7 @@
 
   <title>About Us — RCCG S&P Parish</title>
 
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
@@ -21,7 +21,10 @@
 
   <!-- ===== NAVBAR (same as index.html) ===== -->
   <nav id="navbar" role="navigation" aria-label="Main Navigation">
-    <div class="logo">RCCG <span>S&P Parish</span></div>
+    <a href="index.html" class="logo" aria-label="RCCG S&P Parish Home">
+      <img src="assets/logo.svg" alt="RCCG S&P Parish Logo" class="logo-img"/>
+      <span class="logo-text">RCCG <span>S&P Parish</span></span>
+    </a>
 
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -145,28 +148,59 @@
       <p>The convictions that shape everything we do.</p>
     </div>
 
-    <div class="mvv-grid">
-
-      <article class="mvv-card reveal" aria-label="Our Mission">
-        <div class="mvv-icon" aria-hidden="true">🎯</div>
+    <!-- Mission -->
+    <div class="mvv-row reveal">
+      <div class="mvv-row-image">
+        <img
+          src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=900&auto=format&fit=crop"
+          alt="Open Bible representing our mission"
+          loading="lazy"
+        />
+      </div>
+      <div class="mvv-row-content">
+        <span class="mvv-tag">Our Mission</span>
         <h3>Our Mission</h3>
         <p>
           To make disciples of Jesus Christ by preaching the gospel, building believers in the Word of God,
           equipping the saints for ministry, and extending God's kingdom in Lagos and beyond.
         </p>
-      </article>
+      </div>
+    </div>
 
-      <article class="mvv-card mvv-card--featured reveal" aria-label="Our Vision">
-        <div class="mvv-icon" aria-hidden="true">👁️</div>
+    <!-- Vision -->
+    <div class="mvv-row mvv-row--reverse reveal">
+      <div class="mvv-row-image">
+        <img
+          src="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=900&auto=format&fit=crop"
+          alt="Church congregation representing our vision"
+          loading="lazy"
+        />
+      </div>
+      <div class="mvv-row-content mvv-row-content--dark">
+        <span class="mvv-tag mvv-tag--gold">Our Vision</span>
         <h3>Our Vision</h3>
-        <p>
-          To be a church where every person — regardless of background — encounters the living God,
-          discovers their God-given purpose, and becomes a force for transformation in their community.
-        </p>
-      </article>
+        <ul class="mvv-vision-list" role="list">
+          <li>To make heaven.</li>
+          <li>To take as many people as possible with us.</li>
+          <li>To have a member of R.C.C.G in every family of all Nations.</li>
+          <li>To accomplish No. 1 above, holiness will be our lifestyle.</li>
+          <li>To plant churches within five minutes walking distance in every city and town of developing countries, and within five minutes driving distance in every city and town of developed countries.</li>
+          <li>We will pursue these objectives until every Nation in the world is reached for Jesus Christ Our Lord.</li>
+        </ul>
+      </div>
+    </div>
 
-      <article class="mvv-card reveal" aria-label="Our Values">
-        <div class="mvv-icon" aria-hidden="true">✝️</div>
+    <!-- Values -->
+    <div class="mvv-row reveal">
+      <div class="mvv-row-image">
+        <img
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=900&auto=format&fit=crop"
+          alt="Church community representing our values"
+          loading="lazy"
+        />
+      </div>
+      <div class="mvv-row-content">
+        <span class="mvv-tag">Our Values</span>
         <h3>Our Values</h3>
         <ul class="values-list" role="list">
           <li>Faith rooted in God's Word</li>
@@ -175,9 +209,9 @@
           <li>Community &amp; fellowship</li>
           <li>Outreach &amp; evangelism</li>
         </ul>
-      </article>
-
+      </div>
     </div>
+
   </section>
 
   <!-- ===== DENOMINATION ===== -->
@@ -307,7 +341,10 @@
   <!-- ===== FOOTER ===== -->
   <footer role="contentinfo">
     <div class="footer-inner">
-      <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      <div class="footer-logo-wrap">
+        <img src="assets/logo.svg" alt="RCCG S&P Parish" class="footer-logo-img"/>
+        <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      </div>
       <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
       <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
     </div>
