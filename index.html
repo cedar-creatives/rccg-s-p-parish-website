@@ -72,10 +72,45 @@
       <p>A place of worship, faith, transformation, hope and divine encounters.</p>
       <div class="hero-buttons">
         <a href="#services" class="btn btn-gold">Join Us This Sunday</a>
-        <a href="#contact" class="btn btn-outline">Watch Live</a>
+        <a href="https://www.youtube.com/@rccgsandpparish" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Watch Live</a>
       </div>
     </div>
   </section>
+
+  <!-- ===== COUNTDOWN TO SERVICE ===== -->
+  <div class="countdown-bar" id="countdownBar" role="region" aria-label="Countdown to next service" aria-live="polite">
+    <div class="countdown-inner">
+      <div class="countdown-label-wrap">
+        <span class="countdown-prefix">Next Service</span>
+        <span class="countdown-service-name" id="countdownServiceName">Loading...</span>
+      </div>
+      <div class="countdown-timer" id="countdownTimer" aria-label="Time remaining">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cdDays">00</span>
+          <span class="countdown-unit-label">Days</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cdHours">00</span>
+          <span class="countdown-unit-label">Hours</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cdMins">00</span>
+          <span class="countdown-unit-label">Mins</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cdSecs">00</span>
+          <span class="countdown-unit-label">Secs</span>
+        </div>
+      </div>
+      <div class="countdown-happening" id="countdownHappening" hidden>
+        <span class="countdown-live-dot" aria-hidden="true"></span>
+        Service is happening now — <a href="https://www.youtube.com/@rccgsandpparish" target="_blank" rel="noopener noreferrer">Watch Live</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== ABOUT ===== -->
   <section id="about" aria-labelledby="about-heading">
@@ -86,7 +121,7 @@
 
     <div class="about">
       <img
-        src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?q=80&w=1200&auto=format&fit=crop"
+        src="assets/church_upscaled_vibrant.jpg"
         alt="Congregation worshipping inside the church"
         loading="lazy"
         class="reveal"
@@ -118,19 +153,30 @@
       <article class="service-card reveal">
         <div class="service-icon" aria-hidden="true">🙏</div>
         <h3>Sunday Service</h3>
-        <p>Sundays &bull; 9:30 AM<br><br>Worship, praise and life-transforming messages.</p>
+        <p>
+          1st Service &bull; 8:00 AM – 9:30 AM<br>
+          2nd Service &bull; 10:00 AM – 12:00 PM<br><br>
+          Worship, praise and life-transforming messages.<br>
+          <em>(Thanksgiving Sundays: one service at 10:00 AM)</em>
+        </p>
       </article>
 
       <article class="service-card reveal">
         <div class="service-icon" aria-hidden="true">📖</div>
         <h3>Digging Deep</h3>
-        <p>Tuesdays &bull; 6:00 PM<br><br>Grow deeper in the understanding of God's Word.</p>
+        <p>Tuesdays &bull; 6:00 PM – 7:30 PM<br><br>Grow deeper in the understanding of God's Word.</p>
       </article>
 
       <article class="service-card reveal">
         <div class="service-icon" aria-hidden="true">🔥</div>
         <h3>Faith Clinic</h3>
-        <p>Thursdays &bull; 6:00 PM<br><br>A powerful atmosphere of prayer and breakthrough.</p>
+        <p>Thursdays &bull; 6:30 PM<br><br>A powerful atmosphere of prayer and breakthrough.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">🕯️</div>
+        <h3>Hour of Mercy</h3>
+        <p>1st of every month &bull; 6:00 AM<br>Public Holidays &bull; 7:00 AM<br><br>A special time of prayer and intercession.</p>
       </article>
     </div>
   </section>
@@ -144,28 +190,40 @@
 
     <ul class="ministries-grid" role="list">
       <li class="ministry reveal">
-        <span class="ministry-icon" aria-hidden="true">✝️</span>
-        <span>Youth Ministry</span>
+        <a href="ministries.html#youth" class="ministry-link" aria-label="Go to Youth Ministry">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=400&auto=format&fit=crop" alt="Youth Ministry" loading="lazy" class="ministry-img"/>
+          <span>Youth Ministry</span>
+        </a>
       </li>
       <li class="ministry reveal">
-        <span class="ministry-icon" aria-hidden="true">⭐</span>
-        <span>Children Ministry</span>
+        <a href="ministries.html#children" class="ministry-link" aria-label="Go to Children Ministry">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=400&auto=format&fit=crop" alt="Children Ministry" loading="lazy" class="ministry-img"/>
+          <span>Children Ministry</span>
+        </a>
       </li>
       <li class="ministry reveal">
-        <span class="ministry-icon" aria-hidden="true">🎵</span>
-        <span>Choir</span>
+        <a href="ministries.html#choir" class="ministry-link" aria-label="Go to Choir">
+          <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=400&auto=format&fit=crop" alt="Choir" loading="lazy" class="ministry-img"/>
+          <span>Choir</span>
+        </a>
       </li>
       <li class="ministry reveal">
-        <span class="ministry-icon" aria-hidden="true">🤝</span>
-        <span>Ushering Unit</span>
+        <a href="ministries.html#ushering" class="ministry-link" aria-label="Go to Ushering Unit">
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=400&auto=format&fit=crop" alt="Ushering Unit" loading="lazy" class="ministry-img"/>
+          <span>Ushering Unit</span>
+        </a>
       </li>
       <li class="ministry reveal">
-        <span class="ministry-icon" aria-hidden="true">📷</span>
-        <span>Media Team</span>
+        <a href="ministries.html#media" class="ministry-link" aria-label="Go to Media Team">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop" alt="Media Team" loading="lazy" class="ministry-img"/>
+          <span>Media Team</span>
+        </a>
       </li>
       <li class="ministry reveal">
-        <span class="ministry-icon" aria-hidden="true">📢</span>
-        <span>Evangelism Team</span>
+        <a href="ministries.html#evangelism" class="ministry-link" aria-label="Go to Evangelism Team">
+          <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=400&auto=format&fit=crop" alt="Evangelism Team" loading="lazy" class="ministry-img"/>
+          <span>Evangelism Team</span>
+        </a>
       </li>
     </ul>
   </section>
@@ -174,15 +232,16 @@
   <section class="pastor" id="pastor" aria-labelledby="pastor-heading">
     <div class="pastor-container">
       <img
-        src="/assets/Pastor.jpg"
-        alt="Pastor Femi Abolarin"
+        src="assets/Pastor.jpg"
+        alt="Pastor Femi Raphel Abolarin"
         loading="lazy"
         class="reveal"
       />
       <div class="reveal">
         <h2 id="pastor-heading">Meet Our Pastor</h2>
+        <h3 class="pastor-name">Pastor Femi Raphel Abolarin</h3>
         <p>
-          Pastor Femi Abolarin is passionate about teaching God's Word,
+          Pastor Femi Raphel Abolarin is passionate about teaching God's Word,
           building disciples and helping people discover their God-given purpose.
         </p>
         <p>
@@ -191,6 +250,32 @@
         </p>
         <a href="#contact" class="btn btn-gold">Get In Touch</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== PASTOR'S WIFE ===== -->
+  <section class="pastor pastor--wife" id="pastor-wife" aria-labelledby="pastor-wife-heading">
+    <div class="pastor-container pastor-container--reverse">
+      <div class="reveal">
+        <h2 id="pastor-wife-heading">Meet Our Pastor's Wife</h2>
+        <h3 class="pastor-name">Pastor Mrs. Timi Abolarin</h3>
+        <p>
+          Pastor Mrs. Timi Abolarin is a woman of grace, faith and purpose.
+          She stands alongside the vision of the church, nurturing the women's
+          ministry and supporting families in their walk with God.
+        </p>
+        <p>
+          Her warmth, wisdom and dedication to God's people make her a pillar
+          of strength and encouragement in the RCCG S&P Parish family.
+        </p>
+        <a href="#contact" class="btn btn-gold">Get In Touch</a>
+      </div>
+      <img
+        src="assets/wife.webp"
+        alt="Pastor Mrs. Timi Abolarin"
+        loading="lazy"
+        class="reveal"
+      />
     </div>
   </section>
 
@@ -205,7 +290,7 @@
       <div class="contact-box reveal">
         <span class="contact-icon" aria-hidden="true">📍</span>
         <h3>Address</h3>
-        <p>52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+        <p>59 Peter Agha, Oke-Afa, Isolo, Nigeria</p>
       </div>
       <div class="contact-box reveal">
         <span class="contact-icon" aria-hidden="true">📞</span>
@@ -215,7 +300,7 @@
       <div class="contact-box reveal">
         <span class="contact-icon" aria-hidden="true">✉️</span>
         <h3>Email</h3>
-        <p><a href="mailto:info@rccgsandpparish.com">info@rccgsandpparish.com</a></p>
+        <p><a href="mailto:salavation.praise01@gmail.com">salavation.praise01@gmail.com</a></p>
       </div>
     </div>
 
@@ -279,7 +364,7 @@
         <p class="footer-logo">RCCG <span>S&P Parish</span></p>
       </div>
       <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
-      <p class="footer-address">52 Peter Agha Street, Oke-Afa, Isolo, Lagos</p>
+      <p class="footer-address">59 Peter Agha, Oke-Afa, Isolo, Nigeria</p>
     </div>
   </footer>
 
@@ -287,5 +372,6 @@
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">↑</button>
 
   <script src="js/main.js"></script>
+  <script src="js/countdown.js"></script>
 </body>
 </html>
