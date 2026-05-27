@@ -252,7 +252,55 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ===== 8. WHATSAPP FLOATING BUTTON =====
+  // ===== 8. TEAM LIGHTBOX (homepage teams section) =====
+  const teamLightbox        = document.getElementById('teamLightbox');
+  const teamLightboxBackdrop = document.getElementById('teamLightboxBackdrop');
+  const teamLightboxClose   = document.getElementById('teamLightboxClose');
+  const teamLightboxImg     = document.getElementById('teamLightboxImg');
+  const teamLightboxSpinner = document.getElementById('teamLightboxSpinner');
+  const teamLightboxCaption = document.getElementById('teamLightboxCaption');
+
+  if (teamLightbox) {
+    // Open on card click
+    document.querySelectorAll('.team-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const src     = card.getAttribute('data-src');
+        const caption = card.getAttribute('data-caption') || '';
+
+        teamLightboxImg.classList.add('loading');
+        if (teamLightboxSpinner) teamLightboxSpinner.classList.add('active');
+        teamLightboxCaption.innerHTML = caption;
+        teamLightboxImg.alt = caption.replace(/&amp;/g, '&');
+
+        const tmp = new Image();
+        tmp.onload = () => {
+          teamLightboxImg.src = src;
+          teamLightboxImg.classList.remove('loading');
+          if (teamLightboxSpinner) teamLightboxSpinner.classList.remove('active');
+        };
+        tmp.src = src;
+
+        teamLightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        teamLightboxClose.focus();
+      });
+    });
+
+    // Close handlers
+    function closeTeamLightbox() {
+      teamLightbox.hidden = true;
+      document.body.style.overflow = '';
+      teamLightboxImg.src = '';
+    }
+
+    teamLightboxClose.addEventListener('click', closeTeamLightbox);
+    teamLightboxBackdrop.addEventListener('click', closeTeamLightbox);
+    document.addEventListener('keydown', (e) => {
+      if (!teamLightbox.hidden && e.key === 'Escape') closeTeamLightbox();
+    });
+  }
+
+  // ===== 9. WHATSAPP FLOATING BUTTON =====
   // Injects the button into every page automatically from main.js
   // Update the phone number below to the real WhatsApp number
   const WA_NUMBER = '2348000000000'; // Format: country code + number, no + or spaces
