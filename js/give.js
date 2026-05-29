@@ -31,10 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const emailError    = document.getElementById('emailError');
   const amountError   = document.getElementById('amountError');
 
-  const copyAccBtn    = document.getElementById('copyAccBtn');
-  const copyConfirm   = document.getElementById('copyConfirm');
-  const accountNumber = document.getElementById('accountNumber');
-
   let selectedAmount  = 0;
   let selectedType    = 'tithe';
 
@@ -261,41 +257,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ===== 8. COPY ACCOUNT NUMBER =====
+  // ===== 8. COPY ACCOUNT NUMBERS =====
 
-  copyAccBtn.addEventListener('click', () => {
-    const accNum = accountNumber.textContent.trim();
+  function setupCopyBtn(btnId, accountElId, confirmId) {
+    const btn     = document.getElementById(btnId);
+    const accEl   = document.getElementById(accountElId);
+    const confirm = document.getElementById(confirmId);
+    if (!btn || !accEl) return;
 
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(accNum).then(() => {
-        showCopyConfirm();
-      }).catch(() => {
-        fallbackCopy(accNum);
-      });
-    } else {
-      fallbackCopy(accNum);
-    }
-  });
+    btn.addEventListener('click', () => {
+      const accNum = accEl.textContent.trim();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(accNum).then(() => showCopyConfirm(btn, confirm)).catch(() => fallbackCopy(accNum, btn, confirm));
+      } else {
+        fallbackCopy(accNum, btn, confirm);
+      }
+    });
+  }
 
-  function fallbackCopy(text) {
+  function fallbackCopy(text, btn, confirm) {
     const el = document.createElement('textarea');
-    el.value = text;
-    el.style.position = 'fixed';
-    el.style.opacity  = '0';
-    document.body.appendChild(el);
-    el.select();
+    el.value = text; el.style.position = 'fixed'; el.style.opacity = '0';
+    document.body.appendChild(el); el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-    showCopyConfirm();
+    showCopyConfirm(btn, confirm);
   }
 
-  function showCopyConfirm() {
-    copyConfirm.hidden = false;
-    copyAccBtn.textContent = '✅ Copied!';
+  function showCopyConfirm(btn, confirm) {
+    if (confirm) confirm.hidden = false;
+    const orig = btn.textContent;
+    btn.textContent = '✅ Copied!';
     setTimeout(() => {
-      copyConfirm.hidden = true;
-      copyAccBtn.textContent = '📋 Copy Account Number';
+      if (confirm) confirm.hidden = true;
+      btn.textContent = orig;
     }, 3000);
   }
+
+  // Wire up all three copy buttons
+  setupCopyBtn('copyAccBtn',      'accountNumber',        'copyConfirm');
+  setupCopyBtn('copyTithesBtn',   'tithesAccountNumber',  'copyTithesConfirm');
+  setupCopyBtn('copyBuildingBtn', 'buildingAccountNumber','copyBuildingConfirm');
 
 }); // end DOMContentLoaded

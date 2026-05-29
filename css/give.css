@@ -542,3 +542,73 @@
     font-size: 16px;
   }
 }
+
+/* ===== BANK ACCOUNTS GRID ===== */
+.bank-accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+  align-items: stretch; /* equal height cards */
+}
+
+.bank-account-card {
+  position: relative;
+  padding-top: 52px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Push copy button to bottom so all cards align */
+.bank-account-card .copy-btn {
+  margin-top: auto;
+}
+
+.bank-account-desc {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.65;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.bank-account-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bank-account-badge--gt {
+  background: #f97316;
+  color: white;
+}
+
+.bank-account-badge--sterling {
+  background: #7c3aed;
+  color: white;
+}
+
+.bank-account-card h3 {
+  font-size: 18px;
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .bank-accounts-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== 9. WHATSAPP FLOATING BUTTON =====
   // Injects the button into every page automatically from main.js
   // Update the phone number below to the real WhatsApp number
-  const WA_NUMBER = '2348000000000'; // Format: country code + number, no + or spaces
+  const WA_NUMBER = '2347067346021'; // Format: country code + number, no + or spaces
 
   const waBtn = document.createElement('a');
   waBtn.href        = `https://wa.me/${WA_NUMBER}`;

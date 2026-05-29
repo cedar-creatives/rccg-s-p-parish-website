@@ -76,6 +76,40 @@
     </blockquote>
   </div>
 
+  <!-- ===== GIVING TYPES EXPLAINED ===== -->
+  <section class="giving-types-section" aria-labelledby="types-heading">
+    <div class="section-title reveal">
+      <h2 id="types-heading">Types of Giving</h2>
+      <p>Understanding the different ways you can honour God with your resources.</p>
+    </div>
+
+    <div class="giving-types-grid">
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🙏</div>
+        <h3>Tithe</h3>
+        <p>The tithe is 10% of your income, returned to God as an act of worship and trust. It is the foundation of biblical giving (Malachi 3:10).</p>
+      </article>
+
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🎁</div>
+        <h3>Offering</h3>
+        <p>An offering is a freewill gift given above the tithe — an expression of gratitude and love for what God has done in your life.</p>
+      </article>
+
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🌱</div>
+        <h3>Special Seed</h3>
+        <p>A seed sown in faith for a specific breakthrough, miracle or answer to prayer. God honours faith-filled giving (2 Corinthians 9:6).</p>
+      </article>
+
+      <article class="giving-type-card reveal">
+        <div class="giving-type-icon" aria-hidden="true">🏗️</div>
+        <h3>Building Fund</h3>
+        <p>Contributions specifically towards the construction, renovation and expansion of our church building and facilities.</p>
+      </article>
+    </div>
+  </section>
+
   <!-- ===== GIVING FORM ===== -->
   <section id="give-online" aria-labelledby="give-heading">
     <div class="section-title reveal">
@@ -222,36 +256,8 @@
         </form>
       </div>
 
-      <!-- Right: Bank Transfer + Info -->
+      <!-- Right: Why We Give -->
       <div class="give-info reveal">
-
-        <!-- Bank Transfer -->
-        <div class="give-info-card">
-          <h3>
-            <span aria-hidden="true">🏦</span> Bank Transfer
-          </h3>
-          <p>Prefer to give directly? Use the bank details below:</p>
-          <ul class="bank-details" role="list">
-            <li>
-              <span class="bank-label">Bank</span>
-              <span class="bank-value">First Bank of Nigeria</span>
-            </li>
-            <li>
-              <span class="bank-label">Account Name</span>
-              <span class="bank-value">RCCG S&P Parish</span>
-            </li>
-            <li>
-              <span class="bank-label">Account Number</span>
-              <span class="bank-value" id="accountNumber">0123456789</span>
-            </li>
-          </ul>
-          <button class="copy-btn" id="copyAccBtn" aria-label="Copy account number to clipboard">
-            📋 Copy Account Number
-          </button>
-          <p class="copy-confirm" id="copyConfirm" hidden aria-live="polite">✅ Copied!</p>
-        </div>
-
-        <!-- Why Give -->
         <div class="give-info-card give-info-card--why">
           <h3>
             <span aria-hidden="true">❤️</span> Why We Give
@@ -287,43 +293,98 @@
             </li>
           </ul>
         </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ===== GIVING TYPES EXPLAINED ===== -->
-  <section class="giving-types-section" aria-labelledby="types-heading">
-    <div class="section-title reveal">
-      <h2 id="types-heading">Types of Giving</h2>
-      <p>Understanding the different ways you can honour God with your resources.</p>
     </div>
 
-    <div class="giving-types-grid">
-      <article class="giving-type-card reveal">
-        <div class="giving-type-icon" aria-hidden="true">🙏</div>
-        <h3>Tithe</h3>
-        <p>The tithe is 10% of your income, returned to God as an act of worship and trust. It is the foundation of biblical giving (Malachi 3:10).</p>
-      </article>
-
-      <article class="giving-type-card reveal">
-        <div class="giving-type-icon" aria-hidden="true">🎁</div>
-        <h3>Offering</h3>
-        <p>An offering is a freewill gift given above the tithe — an expression of gratitude and love for what God has done in your life.</p>
-      </article>
-
-      <article class="giving-type-card reveal">
-        <div class="giving-type-icon" aria-hidden="true">🌱</div>
-        <h3>Special Seed</h3>
-        <p>A seed sown in faith for a specific breakthrough, miracle or answer to prayer. God honours faith-filled giving (2 Corinthians 9:6).</p>
-      </article>
-
-      <article class="giving-type-card reveal">
-        <div class="giving-type-icon" aria-hidden="true">🏗️</div>
-        <h3>Building Fund</h3>
-        <p>Contributions specifically towards the construction, renovation and expansion of our church building and facilities.</p>
-      </article>
+    <!-- ===== BANK TRANSFER ACCOUNTS ===== -->
+    <div class="section-title reveal" style="margin-top: 60px;">
+      <h2 style="font-size:32px; color:var(--blue);">Give via Bank Transfer</h2>
+      <p>Prefer to give directly? Use any of the accounts below.</p>
     </div>
+
+    <div class="bank-accounts-grid reveal">
+
+      <!-- Offerings — GTBank -->
+      <div class="give-info-card bank-account-card">
+        <div class="bank-account-badge bank-account-badge--gt">GTBank</div>
+        <h3><span aria-hidden="true">🎁</span> Offerings</h3>
+        <p class="bank-account-desc">Your freewill gift of gratitude to God, given above the tithe as an expression of love and worship.</p>
+        <ul class="bank-details" role="list">
+          <li>
+            <span class="bank-label">Bank</span>
+            <span class="bank-value">Guaranty Trust Bank</span>
+          </li>
+          <li>
+            <span class="bank-label">Account Name</span>
+            <span class="bank-value">Salvation &amp; Praise Parish</span>
+          </li>
+          <li>
+            <span class="bank-label">Account Number</span>
+            <span class="bank-value" id="accountNumber">0125661691</span>
+          </li>
+        </ul>
+        <button class="copy-btn" id="copyAccBtn" aria-label="Copy offerings account number">
+          📋 Copy Account Number
+        </button>
+        <p class="copy-confirm" id="copyConfirm" hidden aria-live="polite">✅ Copied!</p>
+      </div>
+
+      <!-- Tithes — GTBank -->
+      <div class="give-info-card bank-account-card">
+        <div class="bank-account-badge bank-account-badge--gt">GTBank</div>
+        <h3><span aria-hidden="true">🙏</span> Tithes</h3>
+        <p class="bank-account-desc">The first tenth of your income returned to God as an act of trust and obedience (Malachi 3:10).</p>
+        <ul class="bank-details" role="list">
+          <li>
+            <span class="bank-label">Bank</span>
+            <span class="bank-value">Guaranty Trust Bank</span>
+          </li>
+          <li>
+            <span class="bank-label">Account Name</span>
+            <span class="bank-value">Salvation &amp; Praise Parish</span>
+          </li>
+          <li>
+            <span class="bank-label">Account Number</span>
+            <span class="bank-value" id="tithesAccountNumber">0173374323</span>
+          </li>
+        </ul>
+        <button class="copy-btn" id="copyTithesBtn" aria-label="Copy tithes account number">
+          📋 Copy Account Number
+        </button>
+        <p class="copy-confirm" id="copyTithesConfirm" hidden aria-live="polite">✅ Copied!</p>
+      </div>
+
+      <!-- Building Fund — Sterling Bank -->
+      <div class="give-info-card bank-account-card">
+        <div class="bank-account-badge bank-account-badge--sterling">Sterling Bank</div>
+        <h3><span aria-hidden="true">🏗️</span> Building Fund</h3>
+        <p class="bank-account-desc">Contributions towards the construction and expansion of our church building — Project BOF.</p>
+        <ul class="bank-details" role="list">
+          <li>
+            <span class="bank-label">Bank</span>
+            <span class="bank-value">Sterling Bank</span>
+          </li>
+          <li>
+            <span class="bank-label">Account Name</span>
+            <span class="bank-value">RCCG Salvation &amp; Praise Church Building</span>
+          </li>
+          <li>
+            <span class="bank-label">Account Number</span>
+            <span class="bank-value" id="buildingAccountNumber">0099553248</span>
+          </li>
+          <li>
+            <span class="bank-label">Description</span>
+            <span class="bank-value">Project BOF</span>
+          </li>
+        </ul>
+        <button class="copy-btn" id="copyBuildingBtn" aria-label="Copy building fund account number">
+          📋 Copy Account Number
+        </button>
+        <p class="copy-confirm" id="copyBuildingConfirm" hidden aria-live="polite">✅ Copied!</p>
+      </div>
+
+    </div><!-- end .bank-accounts-grid -->
   </section>
 
   <!-- ===== FOOTER ===== -->
@@ -332,6 +393,20 @@
       <div class="footer-logo-wrap">
         <img src="assets/logo.svg" alt="RCCG S&P Parish" class="footer-logo-img"/>
         <p class="footer-logo">RCCG <span>S&P Parish</span></p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://web.facebook.com/salvationandpraiseparish/" target="_blank" rel="noopener noreferrer" class="footer-social-link footer-social-link--facebook" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/rccgsandpparish/" target="_blank" rel="noopener noreferrer" class="footer-social-link footer-social-link--instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@rccgsandpparish" target="_blank" rel="noopener noreferrer" class="footer-social-link footer-social-link--youtube" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://wa.me/2347067346021" target="_blank" rel="noopener noreferrer" class="footer-social-link footer-social-link--whatsapp" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.067 2.875 1.218 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+        </a>
       </div>
       <p>&copy; <span id="year"></span> RCCG S&P Parish. All Rights Reserved.</p>
       <p class="footer-address">59 Peter Agha, Oke-Afa, Isolo, Nigeria</p>
