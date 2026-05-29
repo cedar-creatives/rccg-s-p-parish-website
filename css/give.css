@@ -502,6 +502,10 @@
 }
 
 @media (max-width: 900px) {
+  .page-hero {
+    padding: 120px 6% 70px;
+  }
+
   .page-hero h1 { font-size: 42px; }
 
   .give-type-tabs {
@@ -515,7 +519,13 @@
 
 /* Mobile */
 @media (max-width: 600px) {
-  .page-hero h1 { font-size: 32px; }
+  .page-hero {
+    padding: 100px 5% 60px;
+  }
+
+  .page-hero h1 { font-size: 30px; }
+
+  .page-hero p { font-size: 16px; }
 
   .give-form-wrap {
     padding: 28px 20px;
@@ -524,6 +534,11 @@
   .give-type-tabs {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+  }
+
+  .give-type-btn {
+    font-size: 12px;
+    padding: 12px 6px;
   }
 
   .amount-presets {
@@ -544,6 +559,24 @@
 }
 
 /* ===== BANK ACCOUNTS GRID ===== */
+.bank-transfer-title {
+  margin-top: 60px;
+}
+
+.bank-transfer-title h2 {
+  font-size: 32px;
+  color: var(--blue);
+}
+
+@media (max-width: 600px) {
+  .bank-transfer-title {
+    margin-top: 40px;
+  }
+  .bank-transfer-title h2 {
+    font-size: 24px;
+  }
+}
+
 .bank-accounts-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

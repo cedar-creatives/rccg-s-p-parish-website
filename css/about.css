@@ -532,6 +532,10 @@
 
 /* Tablet */
 @media (max-width: 900px) {
+  .page-hero {
+    padding: 120px 6% 70px;
+  }
+
   .page-hero h1 {
     font-size: 42px;
   }
@@ -598,8 +602,16 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+  .page-hero {
+    padding: 100px 5% 60px;
+  }
+
   .page-hero h1 {
-    font-size: 32px;
+    font-size: 30px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
   }
 
   .stats-bar {
@@ -608,6 +620,12 @@
 
   .stat-number {
     font-size: 32px;
+  }
+
+  /* Fix border on 2x2 grid — remove right border from even items */
+  .stat:nth-child(2),
+  .stat:nth-child(4) {
+    border-right: none;
   }
 
   .history-block {
@@ -630,7 +648,7 @@
   }
 
   .mvv-row-content h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .leader-card,
@@ -643,11 +661,11 @@
   }
 
   .denomination-text h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .cta-inner h2 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .cta-buttons {

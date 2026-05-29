@@ -53,6 +53,8 @@ select {
   border-radius:var(--radius-sm); font-size:15px; outline:none;
   font-family:'Poppins',sans-serif; background:white; color:#0f172a;
   transition:border-color var(--transition); cursor:pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
 select:focus { border-color:var(--blue); box-shadow:0 0 0 4px rgba(11,61,145,0.1); }
 select.error  { border-color:#ef4444; }
@@ -117,12 +119,15 @@ select.error  { border-color:#ef4444; }
   .volunteer-sidebar { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 }
 @media (max-width:900px) {
+  .page-hero { padding: 120px 6% 70px; }
   .page-hero h1 { font-size:42px; }
   .why-serve-grid { grid-template-columns:repeat(2,1fr); }
   .volunteer-sidebar { grid-template-columns:1fr; }
 }
 @media (max-width:600px) {
-  .page-hero h1 { font-size:32px; }
+  .page-hero { padding: 100px 5% 60px; }
+  .page-hero h1 { font-size:30px; }
+  .page-hero p  { font-size:16px; }
   .volunteer-form-wrap { padding:28px 20px; }
   .form-row { grid-template-columns:1fr; }
   .ministry-checkboxes { grid-template-columns:1fr; }

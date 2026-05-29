@@ -142,6 +142,7 @@
 
 /* Responsive */
 @media (max-width:900px) {
+  .page-hero { padding: 120px 6% 70px; }
   .page-hero h1 { font-size:42px; }
   .featured-post { grid-template-columns:1fr; }
   .featured-post-image { min-height:260px; }
@@ -149,7 +150,9 @@
   .blog-grid { grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:600px) {
-  .page-hero h1 { font-size:32px; }
+  .page-hero { padding: 100px 5% 60px; }
+  .page-hero h1 { font-size:30px; }
+  .page-hero p  { font-size:16px; }
   .blog-grid { grid-template-columns:1fr; }
 }
 

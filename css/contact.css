@@ -127,13 +127,17 @@
   .social-grid { grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:900px) {
+  .page-hero { padding: 120px 6% 70px; }
   .page-hero h1 { font-size:42px; }
   .contact-main-layout { grid-template-columns:1fr; }
-  .map-wrap { height:350px; }
+  .map-wrap { height:300px; }
 }
 @media (max-width:600px) {
-  .page-hero h1 { font-size:32px; }
+  .page-hero { padding: 100px 5% 60px; }
+  .page-hero h1 { font-size:30px; }
+  .page-hero p  { font-size:16px; }
   .contact-info-grid { grid-template-columns:1fr; }
   .form-row { grid-template-columns:1fr; }
   .social-grid { grid-template-columns:repeat(2,1fr); }
+  .map-wrap { height:240px; }
 }

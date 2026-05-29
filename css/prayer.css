@@ -45,6 +45,8 @@ select {
   font-family:'Poppins',sans-serif; background:white; color:#0f172a;
   transition:border-color var(--transition), box-shadow var(--transition);
   cursor:pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
 select:focus { border-color:var(--blue); box-shadow:0 0 0 4px rgba(11,61,145,0.1); }
 select.error  { border-color:#ef4444; }
@@ -90,11 +92,14 @@ select.error  { border-color:#ef4444; }
 .prayer-contact-link:hover { color:var(--gold); }
 
 @media (max-width:900px) {
+  .page-hero { padding: 120px 6% 70px; }
   .page-hero h1 { font-size:42px; }
   .prayer-layout { grid-template-columns:1fr; }
 }
 @media (max-width:600px) {
-  .page-hero h1 { font-size:32px; }
+  .page-hero { padding: 100px 5% 60px; }
+  .page-hero h1 { font-size:30px; }
+  .page-hero p  { font-size:16px; }
   .prayer-form-wrap { padding:28px 20px; }
   .form-row { grid-template-columns:1fr; }
 }

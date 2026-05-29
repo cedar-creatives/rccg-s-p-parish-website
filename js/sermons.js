@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audioSpeaker.textContent = speaker;
     audioEl.src              = src;
     audioPlayer.hidden       = false;
+    document.body.classList.add('audio-playing');
     audioEl.play().catch(() => {
       // Autoplay blocked — player is still visible, user can press play manually
     });
@@ -142,12 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
     audioSpeaker.textContent = speaker;
     audioEl.src              = '';
     audioPlayer.hidden       = false;
+    document.body.classList.add('audio-playing');
   }
 
   audioClose.addEventListener('click', () => {
     audioEl.pause();
     audioEl.src    = '';
     audioPlayer.hidden = true;
+    document.body.classList.remove('audio-playing');
   });
 
   // Pause audio when navigating away

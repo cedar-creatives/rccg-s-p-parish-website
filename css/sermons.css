@@ -522,6 +522,10 @@
 
 /* Tablet */
 @media (max-width: 900px) {
+  .page-hero {
+    padding: 120px 6% 70px;
+  }
+
   .page-hero h1 { font-size: 42px; }
 
   .featured-sermon-inner {
@@ -538,7 +542,13 @@
 
 /* Mobile */
 @media (max-width: 600px) {
-  .page-hero h1 { font-size: 32px; }
+  .page-hero {
+    padding: 100px 5% 60px;
+  }
+
+  .page-hero h1 { font-size: 30px; }
+
+  .page-hero p { font-size: 16px; }
 
   .sermon-actions { flex-direction: column; }
 
@@ -551,7 +561,7 @@
     font-size: 12px;
   }
 
-  .sermons-cta-inner h2 { font-size: 28px; }
+  .sermons-cta-inner h2 { font-size: 26px; }
 
   .cta-buttons {
     flex-direction: column;
@@ -564,4 +574,15 @@
   }
 
   .audio-player audio { width: 100%; }
+}
+
+/* Offset scroll-to-top button above the audio player when it's visible */
+body.audio-playing .scroll-top {
+  bottom: 90px;
+}
+
+@media (max-width: 600px) {
+  body.audio-playing .scroll-top {
+    bottom: 110px;
+  }
 }

@@ -44,6 +44,22 @@
   line-height: 1.7;
 }
 
+/* ===== SERVICE MOMENTS SECTION ===== */
+.service-moments-section {
+  padding: 80px 8%;
+  background: var(--light-blue);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.service-moments-section .section-title h2 {
+  font-size: 36px;
+  color: var(--blue);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 /* ===== FILTER BUTTONS ===== */
 .gallery-filters {
   display: flex;
@@ -403,6 +419,10 @@
 
 /* Tablet */
 @media (max-width: 900px) {
+  .page-hero {
+    padding: 120px 6% 70px;
+  }
+
   .page-hero h1 {
     font-size: 42px;
   }
@@ -431,8 +451,16 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+  .page-hero {
+    padding: 100px 5% 60px;
+  }
+
   .page-hero h1 {
-    font-size: 32px;
+    font-size: 30px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
   }
 
   .gallery-filters {
@@ -450,7 +478,15 @@
   }
 
   .gallery-cta-inner h2 {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .service-moments-section {
+    padding: 60px 5%;
+  }
+
+  .service-moments-section .section-title h2 {
+    font-size: 26px;
   }
 
   .lightbox-prev,
