@@ -333,4 +333,64 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.body.appendChild(waBtn);
 
+  // ===== 10. SERVICE MOMENTS SLIDESHOW =====
+  const track = document.getElementById('slideshowTrack');
+  const prevBtn = document.getElementById('slideshowPrev');
+  const nextBtn = document.getElementById('slideshowNext');
+  const dotsContainer = document.getElementById('slideshowDots');
+
+  if (track && prevBtn && nextBtn && dotsContainer) {
+    const slides = Array.from(track.children);
+    const dots = Array.from(dotsContainer.children);
+    let slideIndex = 0;
+    let autoplayTimer = null;
+
+    function updateSlideshow() {
+      track.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === slideIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === slideIndex);
+      });
+    }
+
+    function showNextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      updateSlideshow();
+    }
+
+    function showPrevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      updateSlideshow();
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(showNextSlide, 4500);
+    }
+
+    nextBtn.addEventListener('click', () => {
+      showNextSlide();
+      resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      showPrevSlide();
+      resetAutoplay();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        slideIndex = i;
+        updateSlideshow();
+        resetAutoplay();
+      });
+    });
+
+    resetAutoplay();
+  }
+
 }); // end DOMContentLoaded

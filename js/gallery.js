@@ -89,14 +89,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== 2. LIGHTBOX =====
 
   // Open lightbox when a thumbnail is clicked
-  document.getElementById('galleryGrid').addEventListener('click', (e) => {
-    const thumb = e.target.closest('.gallery-thumb');
-    if (!thumb) return;
+  const grids = ['galleryGrid', 'serviceMomentsGrid'];
+  grids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('click', (e) => {
+        const thumb = e.target.closest('.gallery-thumb');
+        if (!thumb) return;
 
-    const index = visibleItems.indexOf(thumb);
-    if (index === -1) return;
+        const index = visibleItems.indexOf(thumb);
+        if (index === -1) return;
 
-    openLightbox(index);
+        openLightbox(index);
+      });
+    }
   });
 
   function openLightbox(index) {
