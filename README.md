@@ -179,13 +179,13 @@ Provided overall technical direction and project leadership. Responsible for arc
 
 ---
 
-### 💻 Veronica Ikkyumeh — *Fullstack Developer & Software Engineer*
-Led the hands-on development of the website — from structuring the HTML pages and crafting the CSS design system to implementing the JavaScript interactivity across all 11 pages. Brought professional fullstack engineering skills to bear on every detail of the site, from the responsive navbar to the gallery lightbox and sermon audio player.
+### 💻 Veronica Ikkyumeh — *Fullstack Developer & Software Engineer (Mentor & Technical Guide)*
+Served as the technical mentor and guide throughout the project. Provided hands-on support, code reviews, and direction to the teen developers — helping them navigate challenges, understand best practices, and grow as engineers. Her expertise as a fullstack developer and software engineer was the backbone that kept the team on track, ensuring the codebase met a professional standard while empowering the teens to own every line of code they wrote.
 
 ---
 
-### 🙏 The Teen Church — *RCCG S&P Parish*
-The young people of the Teen Church of RCCG S&P Parish are the heart of this project. Their creativity, enthusiasm, and willingness to serve God with their gifts made this website possible. This project stands as proof that the next generation is ready, capable, and on fire for God.
+### 🙏 The Teen Church — *RCCG S&P Parish (Core Development Team)*
+The young people of the Teen Church of RCCG S&P Parish are the true builders of this project. They wrote the HTML, styled the pages, implemented the JavaScript, handled the images, and brought the entire site to life — guided by their mentors but driven by their own hands and hearts. This website is their work, their achievement, and their offering to God.
 
 > *"Don't let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity."*
 > — 1 Timothy 4:12 (NIV)
