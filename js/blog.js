@@ -1,8 +1,48 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — blog.js
-   ============================== */
+   
+   This file runs on the Blog page (blog.html).
+   It handles:
+   
+   1. ARTICLE DATA — All blog articles are stored here as
+      JavaScript objects (not in a database). Each article
+      has an id, title, category, date, image, and content.
+      To add a new article, add a new object to the ARTICLES
+      array following the same pattern.
+   
+   2. FILTER BUTTONS — Show articles by category (All,
+      Devotional, Teaching, Testimony, Prayer)
+   
+   3. MODAL — Clicking "Read More" opens the full article
+      in an overlay (modal) without leaving the page.
+      The modal is built dynamically from the article data.
+   
+   4. SHARE BUTTONS — WhatsApp, Facebook, and copy-link
+      buttons inside each article modal.
+   
+   5. TOAST — A small notification that appears briefly
+      when the user copies a link ("Link copied!")
+   ============================================================ */
 
-/* ── Article Data ─────────────────────────────────────────────────── */
+/* ==========================================================
+   ARTICLE DATA
+   
+   Each article is a JavaScript object with these properties:
+     id        — unique identifier, used to find the article
+     title     — the article headline
+     category  — 'Devotional', 'Teaching', 'Testimony', or 'Prayer'
+     date      — display date (not used for sorting)
+     readTime  — estimated reading time
+     image     — URL of the header image
+     imageAlt  — description of the image (for accessibility)
+     content   — the full HTML content of the article
+   
+   TO ADD A NEW ARTICLE:
+   1. Copy one of the objects below (from { to the closing },)
+   2. Change all the values
+   3. Make sure the id is unique (no two articles can share one)
+   4. Add a matching card in blog.html with data-article-id="your-id"
+========================================================== */
 const ARTICLES = [
   {
     id: 'morning-devotion',
@@ -267,16 +307,39 @@ const ARTICLES = [
   }
 ];
 
-/* ── Helpers ──────────────────────────────────────────────────────── */
+/* ==========================================================
+   HELPER: FIND AN ARTICLE BY ITS ID
+   
+   Array.find() loops through the ARTICLES array and returns
+   the first object where article.id matches the given id.
+   If nothing matches, it returns undefined, and we return null.
+   
+   Example: getArticleById('morning-devotion')
+   returns the first article object above.
+========================================================== */
 function getArticleById(id) {
   return ARTICLES.find(a => a.id === id) || null;
 }
 
+/* ==========================================================
+   BUILD THE SHARE BAR HTML
+   
+   This function returns an HTML string for the share buttons
+   (WhatsApp, Facebook, Copy Link) that appear at the bottom
+   of each article modal.
+   
+   encodeURIComponent() converts special characters in URLs
+   to safe versions: spaces become %20, & becomes %26 etc.
+   This is required when passing text as a URL parameter.
+   
+   Template literals (backtick strings) let us embed variables
+   directly in HTML strings using ${variable} syntax.
+========================================================== */
 function buildShareBar(article, context) {
-  const pageUrl  = encodeURIComponent(window.location.href);
-  const msgText  = encodeURIComponent('Read "' + article.title + '" on RCCG S&P Parish Blog: ' + window.location.href);
-  const fbUrl    = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
-  const waUrl    = 'https://wa.me/?text=' + msgText;
+  const pageUrl = encodeURIComponent(window.location.href);
+  const msgText = encodeURIComponent('Read "' + article.title + '" on RCCG S&P Parish Blog: ' + window.location.href);
+  const fbUrl   = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
+  const waUrl   = 'https://wa.me/?text=' + msgText;
   return `
     <div class="share-bar" data-context="${context}">
       <span class="share-label">Share:</span>
@@ -295,41 +358,94 @@ function buildShareBar(article, context) {
     </div>`;
 }
 
-/* ── Toast ────────────────────────────────────────────────────────── */
+/* ==========================================================
+   TOAST NOTIFICATION
+   
+   A "toast" is a small message that pops up briefly then
+   disappears — like a notification. We use it to confirm
+   when the user copies a link ("Link copied!").
+   
+   We create the toast element if it doesn't exist yet,
+   add the visible class to show it, then remove it after
+   2 seconds using setTimeout.
+   
+   clearTimeout(toast._timer) cancels any existing timer
+   so if the user clicks copy twice quickly, the toast
+   resets its 2-second countdown each time.
+========================================================== */
 function showToast(msg) {
   let toast = document.getElementById('blogToast');
   if (!toast) {
+    /* Create the toast element if it doesn't exist yet */
     toast = document.createElement('div');
     toast.id = 'blogToast';
-    toast.setAttribute('role', 'status');
-    toast.setAttribute('aria-live', 'polite');
+    toast.setAttribute('role', 'status');       /* accessibility: announce to screen readers */
+    toast.setAttribute('aria-live', 'polite');  /* accessibility: read when convenient */
     document.body.appendChild(toast);
   }
   toast.textContent = msg;
-  toast.classList.add('blog-toast--visible');
-  clearTimeout(toast._timer);
+  toast.classList.add('blog-toast--visible'); /* CSS makes it appear */
+  clearTimeout(toast._timer);                 /* cancel any existing hide timer */
   toast._timer = setTimeout(() => toast.classList.remove('blog-toast--visible'), 2000);
+  /* 2000ms = 2 seconds, then hide it */
 }
 
-/* ── Copy-link handler (delegated) ───────────────────────────────── */
+/* ==========================================================
+   COPY LINK HANDLER (Event Delegation)
+   
+   Instead of adding a click listener to every copy button,
+   we add ONE listener to the whole document and check if
+   the clicked element is a copy button.
+   
+   e.target.closest('.share-btn--copy') walks up the DOM
+   from the clicked element to find the nearest copy button.
+   If the click wasn't on a copy button, it returns null
+   and we return early (do nothing).
+   
+   navigator.clipboard.writeText() is the modern way to copy.
+   We fall back to the old textarea trick for older browsers.
+========================================================== */
 document.addEventListener('click', e => {
   const btn = e.target.closest('.share-btn--copy');
-  if (!btn) return;
+  if (!btn) return; /* not a copy button — ignore */
+
   const title = btn.getAttribute('data-title') || document.title;
   const text  = title + ' — ' + window.location.href;
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(() => showToast('Link copied!')).catch(() => showToast('Copy failed'));
+    /* Modern clipboard API */
+    navigator.clipboard.writeText(text)
+      .then(() => showToast('Link copied!'))
+      .catch(() => showToast('Copy failed'));
   } else {
-    // Fallback for older browsers
+    /* Fallback for older browsers */
     const ta = document.createElement('textarea');
-    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); showToast('Link copied!'); } catch { showToast('Copy failed'); }
+    ta.value = text;
+    ta.style.position = 'fixed';  /* prevent page jumping */
+    ta.style.opacity  = '0';      /* invisible */
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast('Link copied!');
+    } catch {
+      showToast('Copy failed');
+    }
     document.body.removeChild(ta);
   }
 });
 
-/* ── WhatsApp share handler (delegated, card-level) ──────────────── */
+/* ==========================================================
+   WHATSAPP AND FACEBOOK SHARE HANDLERS
+   
+   These handle share button clicks on the blog CARDS
+   (not inside the modal — those are handled by buildShareBar).
+   
+   window.open() opens a new browser tab/window with the
+   given URL. The third argument sets window features:
+   'noopener,noreferrer' is a security best practice for
+   links that open in new tabs.
+========================================================== */
 document.addEventListener('click', e => {
   const link = e.target.closest('[data-share-wa]');
   if (!link) return;
@@ -341,7 +457,6 @@ document.addEventListener('click', e => {
   window.open('https://wa.me/?text=' + msg, '_blank', 'noopener,noreferrer');
 });
 
-/* ── Facebook share handler (delegated, card-level) ──────────────── */
 document.addEventListener('click', e => {
   const link = e.target.closest('[data-share-fb]');
   if (!link) return;
@@ -350,28 +465,52 @@ document.addEventListener('click', e => {
   window.open('https://www.facebook.com/sharer/sharer.php?u=' + pageUrl, '_blank', 'noopener,noreferrer,width=600,height=400');
 });
 
-/* ── Modal ────────────────────────────────────────────────────────── */
+/* ==========================================================
+   OPEN ARTICLE MODAL
+   
+   When the user clicks "Read More" on any blog card, we:
+   1. Find the article data by its id
+   2. Build the modal HTML as a string
+   3. Create a new <div> element and set its innerHTML
+   4. Add it to the page (document.body.appendChild)
+   5. Animate it in with a CSS class
+   
+   We remove any existing modal first to avoid duplicates.
+   
+   The modal HTML includes:
+   - A close button (sticky at the top)
+   - A hero image
+   - The article title, meta info, and full content
+   - Share buttons
+   
+   requestAnimationFrame() waits for the browser to paint
+   the element before adding the visible class — this ensures
+   the CSS transition (fade in) actually plays.
+========================================================== */
 function openModal(articleId) {
   const article = getArticleById(articleId);
-  if (!article) return;
+  if (!article) return; /* article not found — do nothing */
 
-  // Remove any existing modal
+  /* Remove any existing modal (in case one is already open) */
   const existing = document.getElementById('blogModal');
   if (existing) existing.remove();
 
+  /* Determine the CSS class for the category badge colour */
   const categoryClass = article.category.toLowerCase();
   const tagClass = categoryClass === 'teaching'  ? 'blog-category-tag--teaching'
                  : categoryClass === 'testimony' ? 'blog-category-tag--testimony'
                  : categoryClass === 'prayer'    ? 'blog-category-tag--prayer'
-                 : '';
+                 : ''; /* default (Devotional) uses the gold style */
 
+  /* Create the modal element */
   const modal = document.createElement('div');
   modal.id = 'blogModal';
   modal.className = 'blog-modal';
-  modal.setAttribute('role', 'dialog');
-  modal.setAttribute('aria-modal', 'true');
-  modal.setAttribute('aria-labelledby', 'blogModalTitle');
+  modal.setAttribute('role', 'dialog');           /* accessibility: this is a dialog */
+  modal.setAttribute('aria-modal', 'true');       /* accessibility: traps focus inside */
+  modal.setAttribute('aria-labelledby', 'blogModalTitle'); /* accessibility: title */
 
+  /* Build the modal's inner HTML */
   modal.innerHTML = `
     <div class="blog-modal-container" id="blogModalContainer">
       <button class="blog-modal-close" id="blogModalClose" aria-label="Close article">&#x2715;</button>
@@ -391,68 +530,95 @@ function openModal(articleId) {
       </div>
     </div>`;
 
+  /* Add the modal to the page */
   document.body.appendChild(modal);
-  document.body.classList.add('modal-open');
+  document.body.classList.add('modal-open'); /* CSS: prevent background scrolling */
 
-  // Focus the close button for accessibility
+  /* Wait one frame, then add the visible class to trigger the fade-in animation */
   requestAnimationFrame(() => {
     modal.classList.add('blog-modal--visible');
-    document.getElementById('blogModalClose').focus();
+    document.getElementById('blogModalClose').focus(); /* move focus to close button */
   });
 
-  // Close on backdrop click
+  /* Close when clicking the dark backdrop (outside the modal container) */
   modal.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
+    if (e.target === modal) closeModal(); /* only if clicking the backdrop itself */
   });
 
-  // Close button
+  /* Wire up the close button */
   document.getElementById('blogModalClose').addEventListener('click', closeModal);
 }
 
+/* Close the modal with a fade-out animation */
 function closeModal() {
   const modal = document.getElementById('blogModal');
   if (!modal) return;
-  modal.classList.remove('blog-modal--visible');
-  document.body.classList.remove('modal-open');
+  modal.classList.remove('blog-modal--visible'); /* trigger fade-out CSS transition */
+  document.body.classList.remove('modal-open');  /* restore background scrolling */
+  /* Wait for the animation to finish (300ms) before removing the element */
   setTimeout(() => { if (modal.parentNode) modal.remove(); }, 300);
 }
 
-// Escape key closes modal
+/* Close modal with Escape key */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
-/* ── DOMContentLoaded ─────────────────────────────────────────────── */
+/* ==========================================================
+   DOM CONTENT LOADED — Filter + Read More
+   
+   This section runs after the page is ready.
+   It sets up:
+   1. The category filter buttons
+   2. The "Read More" click handler for all cards
+========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Filter ── */
+  /* --- Category Filter Buttons --- */
   const filterBtns = document.querySelectorAll('.blog-filter-btn');
   const blogCards  = document.querySelectorAll('.blog-card');
-  const blogEmpty  = document.getElementById('blogEmpty');
+  const blogEmpty  = document.getElementById('blogEmpty'); /* "no articles" message */
   let current = 'all';
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       if (btn.getAttribute('data-filter') === current) return;
-      filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
-      btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
+
+      /* Update active button */
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
       current = btn.getAttribute('data-filter');
       let shown = 0;
+
+      /* Show/hide cards based on category */
       blogCards.forEach(card => {
         const match = current === 'all' || card.getAttribute('data-category') === current;
-        card.classList.toggle('hidden', !match);
+        card.classList.toggle('hidden', !match); /* add 'hidden' if !match, remove if match */
         if (match) shown++;
       });
-      blogEmpty.hidden = shown > 0;
+
+      blogEmpty.hidden = shown > 0; /* show empty state if nothing matches */
     });
   });
 
-  /* ── "Read More" click — cards and featured ── */
+  /* --- "Read More" Click Handler ---
+     
+     Any element with data-article-id="..." triggers the modal.
+     This includes the "Read More" links on cards AND the
+     featured post button.
+     
+     We use event delegation on the whole document so we don't
+     need to add listeners to each individual button. */
   document.addEventListener('click', e => {
     const trigger = e.target.closest('[data-article-id]');
-    if (!trigger) return;
+    if (!trigger) return; /* click was not on an article trigger */
     e.preventDefault();
     openModal(trigger.getAttribute('data-article-id'));
   });
 
-});
+}); /* end DOMContentLoaded */
