@@ -111,9 +111,6 @@ nav.scrolled {
   font-weight: 800;
   letter-spacing: 1px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 180px;
 }
 
 .logo-text span {
@@ -1168,11 +1165,6 @@ footer p {
 
   nav {
     padding: 16px 5%;
-  }
-
-  .logo-text {
-    font-size: 18px;
-    max-width: 140px;
   }
 
   section {
