@@ -1,8 +1,25 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — sermons.css
-   Page-specific styles for Sermons
-   Requires: css/style.css first
-   ============================== */
+   
+   Styles for the Sermons page (sermons.html).
+   
+   Key sections:
+   - Featured sermon: video embed + details side by side
+   - Search bar with icon overlay
+   - Sermon cards grid (3 → 2 → 1 columns)
+   - Fixed audio player bar at the bottom of the screen
+   
+   The video embed uses the "padding-bottom trick" for
+   responsive 16:9 video:
+     padding-bottom: 56.25% = 9/16 = 56.25%
+   The iframe is positioned absolutely inside, filling 100%.
+   This makes the video always maintain its 16:9 ratio.
+   
+   The audio player uses position: fixed; bottom: 0 to stick
+   to the bottom of the screen. When it's visible, the CSS
+   class 'audio-playing' on <body> moves the scroll-to-top
+   button up so they don't overlap.
+   ============================================================ */
 
 /* ===== PAGE HERO ===== */
 .page-hero {

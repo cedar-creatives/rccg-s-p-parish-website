@@ -1,15 +1,95 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — style.css
-   Author: Cedar Creatives
-   ============================== */
+   
+   This is the MAIN stylesheet. It is loaded on EVERY page.
+   It contains styles shared across the whole website:
+   
+   - CSS Variables (colour palette, shadows, border-radius)
+   - CSS Reset (removes browser default spacing)
+   - Body and base element styles
+   - Navbar (top navigation bar)
+   - Buttons
+   - Sections and section titles
+   - Hero section (homepage full-screen banner)
+   - About section
+   - Services section
+   - Ministries grid
+   - Pastor section
+   - Contact boxes and form
+   - Footer
+   - Scroll-to-top button
+   - WhatsApp floating button
+   - Countdown bar
+   - Teams showcase (Meet Our Team)
+   - Announcement section
+   - Slideshow
+   - Responsive breakpoints (tablet + mobile)
+   
+   HOW CSS WORKS (quick reminder):
+   - Selectors target HTML elements: .class, #id, element
+   - Properties set visual rules: color, font-size, padding
+   - Values are assigned with a colon: color: red;
+   - Rules are grouped in curly braces: .box { color: red; }
+   ============================================================ */
 
-/* ===== CSS RESET & VARIABLES ===== */
+
+/* ============================================================
+   CSS RESET
+   
+   Different browsers have different default styles. For example,
+   Chrome and Firefox add different amounts of margin to headings.
+   A CSS reset removes all those defaults so we start from zero
+   and everything looks the same in every browser.
+   
+   * means "every element"
+   *::before and *::after target pseudo-elements (decorative
+   content added via CSS, like the arrow on dropdown menus)
+   
+   box-sizing: border-box is very important:
+   By default, if you set width: 200px and padding: 20px,
+   the element becomes 240px wide (200 + 20 + 20).
+   With border-box, padding is INCLUDED in the width,
+   so it stays 200px. This makes layout much more predictable.
+   ============================================================ */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   
+   :root is the top-level element (the <html> tag).
+   Variables defined here are available everywhere in the CSS.
+   
+   To use a variable: color: var(--gold);
+   To change the whole site's gold colour, just change --gold here.
+   
+   Colour palette:
+   --gold       : the warm gold used for highlights and CTAs
+   --blue       : the deep navy blue (main brand colour)
+   --blue-dark  : darker navy for hover states
+   --light-blue : very pale blue for section backgrounds
+   --white      : pure white
+   --dark       : very dark navy (used for dark sections/footer)
+   --text-body  : medium grey for body text
+   --text-light : lighter grey for secondary text
+   --text-muted : very light grey for subtle text
+   
+   Shadows (box-shadow values):
+   --shadow-sm  : subtle shadow for cards
+   --shadow-md  : medium shadow for hover states
+   --shadow-lg  : strong shadow for modals/overlays
+   
+   Border radius (how rounded corners are):
+   --radius-sm  : 16px — slightly rounded
+   --radius-md  : 25px — noticeably rounded
+   --radius-lg  : 30px — very rounded
+   
+   --transition : the default animation speed (0.35 seconds)
+   ============================================================ */
 :root {
   --gold: #d4af37;
   --gold-hover: #e6c04a;
@@ -30,6 +110,31 @@
   --transition: 0.35s ease;
 }
 
+
+/* ============================================================
+   BASE STYLES
+   
+   scroll-behavior: smooth — when you click a link like
+   <a href="#about">, the page scrolls smoothly instead of
+   jumping instantly.
+   
+   font-family: 'Poppins' — the font loaded from Google Fonts.
+   'sans-serif' is the fallback if Poppins fails to load.
+   
+   overflow-x: hidden — prevents horizontal scrollbar from
+   appearing if any element accidentally overflows the page width.
+   
+   line-height: 1.6 — sets the space between lines of text.
+   1.6 means 1.6× the font size. Good for readability.
+   
+   max-width: 100% on images prevents them from overflowing
+   their container. display: block removes the small gap that
+   appears below inline images.
+   
+   list-style: none removes bullet points from all <ul> lists.
+   text-decoration: none removes underlines from all <a> links.
+   color: inherit makes links use the same colour as their parent.
+   ============================================================ */
 html {
   scroll-behavior: smooth;
 }
@@ -56,6 +161,22 @@ a {
   color: inherit;
 }
 
+/* ============================================================
+   SCROLL REVEAL ANIMATION
+   
+   Any element with class="reveal" starts invisible and
+   slightly shifted down. When JavaScript detects it entering
+   the viewport, it adds class="visible" which triggers the
+   CSS transition — the element fades in and slides up.
+   
+   opacity: 0 → invisible
+   transform: translateY(35px) → shifted 35px downward
+   transition → animates changes to opacity and transform
+   
+   When .visible is added:
+   opacity: 1 → fully visible
+   transform: translateY(0) → back to normal position
+   ============================================================ */
 /* ===== SCROLL REVEAL ANIMATION ===== */
 .reveal {
   opacity: 0;
@@ -68,7 +189,26 @@ a {
   transform: translateY(0);
 }
 
-/* ===== NAVBAR ===== */
+
+/* ============================================================
+   NAVBAR
+   
+   position: fixed — the navbar stays at the top of the screen
+   even when you scroll. It doesn't move with the page.
+   
+   z-index: 1000 — controls stacking order. Higher numbers
+   appear on top of lower numbers. 1000 ensures the navbar
+   is always above page content.
+   
+   padding: 18px 8% — 18px top/bottom, 8% left/right.
+   Using % for horizontal padding makes it scale with screen width.
+   
+   backdrop-filter: blur(10px) — blurs whatever is behind the
+   navbar, creating a frosted glass effect.
+   
+   When the user scrolls down 80px, JavaScript adds class
+   'scrolled' which makes the background more opaque.
+   ============================================================ */
 nav {
   position: fixed;
   top: 0;
@@ -329,6 +469,27 @@ nav.scrolled {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* ============================================================
+   BUTTONS
+   
+   .btn is the base class for all buttons on the site.
+   .btn-gold and .btn-outline are variations.
+   
+   display: inline-block — allows setting width/height/padding
+   on what would otherwise be an inline element.
+   
+   border-radius: 50px — makes the button pill-shaped.
+   A value larger than half the height creates a full pill.
+   
+   white-space: nowrap — prevents button text from wrapping
+   to a second line.
+   
+   transform: translateY(-3px) on hover — moves the button
+   3px upward, creating a "lift" effect.
+   
+   box-shadow on .btn-gold — the gold glow under the button.
+   rgba(212, 175, 55, 0.4) = gold colour at 40% opacity.
+   ============================================================ */
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
@@ -368,6 +529,17 @@ nav.scrolled {
   transform: translateY(-3px);
 }
 
+/* ============================================================
+   SECTIONS AND SECTION TITLES
+   
+   Every content section uses padding: 100px 8% — generous
+   vertical space (100px top and bottom) and 8% horizontal
+   padding that scales with screen width.
+   
+   .section-title is the centred heading block above each
+   section's content. margin-bottom: 60px gives breathing
+   room between the title and the content below it.
+   ============================================================ */
 /* ===== SECTIONS ===== */
 section {
   padding: 100px 8%;
@@ -390,6 +562,24 @@ section {
   font-size: 18px;
 }
 
+/* ============================================================
+   HERO SECTION (Homepage full-screen banner)
+   
+   min-height: 100vh — at least 100% of the viewport height.
+   vh = viewport height. 100vh = the full visible screen height.
+   
+   The background uses two layers:
+   1. A dark gradient overlay (rgba with 0.78 opacity = 78% dark)
+   2. The church photo from Unsplash
+   center/cover — centres the image and scales it to cover
+   the entire area without stretching.
+   
+   display: flex with align-items/justify-content: center
+   centres the content both vertically and horizontally.
+   
+   The hero content has max-width: 900px to keep text readable
+   on very wide screens.
+   ============================================================ */
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
@@ -1022,6 +1212,22 @@ footer p {
   }
 }
 
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   
+   @media queries apply styles only when certain conditions
+   are met — in this case, when the screen is narrower than
+   a certain width.
+   
+   max-width: 900px = tablet and smaller
+   max-width: 600px = mobile phones
+   
+   Inside these blocks, we override the desktop styles with
+   smaller values — smaller fonts, stacked layouts, etc.
+   
+   The hamburger menu appears at 900px because the full
+   desktop nav is too wide for tablet screens.
+   ============================================================ */
 /* ===== RESPONSIVE: TABLET (900px) ===== */
 @media (max-width: 900px) {
   .hero h1 {

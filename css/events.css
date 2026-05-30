@@ -1,8 +1,20 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — events.css
-   Page-specific styles for Events
-   Requires: css/style.css first
-   ============================== */
+   
+   Styles for the Events page (events.html).
+   
+   Sections:
+   - Featured event (dark card with date block + details)
+   - Events grid (3 columns → 2 → 1 on smaller screens)
+   - Weekly schedule cards
+   - CTA section at the bottom
+   
+   The .event-card--past class (added by JavaScript) makes
+   past events appear greyed out with reduced opacity.
+   
+   The featured event uses a gradient background and a
+   decorative circle (::before pseudo-element) for visual depth.
+   ============================================================ */
 
 /* ===== PAGE HERO ===== */
 .page-hero {

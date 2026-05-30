@@ -1,6 +1,20 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — contact.css
-   ============================== */
+   
+   Styles for the Contact page (contact.html).
+   
+   Layout:
+   - 4-column info cards at the top (address, phone, email, hours)
+   - 2-column layout below: map on the left, form on the right
+   - 4-column social media cards at the bottom
+   
+   All grids collapse to fewer columns on smaller screens
+   using @media queries at the bottom of this file.
+   
+   The map is an <iframe> (embedded Google Maps). We give it
+   a fixed height and use overflow: hidden on the wrapper to
+   apply border-radius to the iframe corners.
+   ============================================================ */
 
 .page-hero {
   min-height: 50vh;

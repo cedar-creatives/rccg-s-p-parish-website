@@ -1,10 +1,32 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — about.css
-   Page-specific styles for About Us
-   Requires: css/style.css first
-   ============================== */
+   
+   Styles specific to the About page (about.html).
+   This file is loaded AFTER style.css, so it can override
+   shared styles and add page-specific ones.
+   
+   Sections styled here:
+   - Page hero banner (the big header image at the top)
+   - Stats bar (Members, Years, Departments, Services)
+   - Church history timeline
+   - Mission / Vision / Values rows
+   - Denomination section
+   - Leadership grid (pastor cards)
+   - Call-to-action section at the bottom
+   ============================================================ */
 
-/* ===== PAGE HERO ===== */
+/* ===== PAGE HERO =====
+   
+   Every inner page (About, Gallery, Sermons etc.) has a
+   "page hero" — a full-width banner with a background image,
+   dark overlay, and centred text.
+   
+   padding: 140px 8% 80px — extra top padding (140px) to
+   push content below the fixed navbar (which is ~74px tall).
+   Without this, the text would hide behind the navbar.
+   
+   min-height: 55vh — at least 55% of the screen height.
+   ============================================================ */
 .page-hero {
   min-height: 55vh;
   background:

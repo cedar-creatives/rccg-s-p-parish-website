@@ -1,6 +1,23 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — blog.css
-   ============================== */
+   
+   Styles for the Blog page (blog.html).
+   
+   Notable patterns:
+   
+   FEATURED POST: Uses a 2-column grid (image + text side by side).
+   On mobile it stacks to a single column.
+   
+   BLOG GRID: 3 columns on desktop, 2 on tablet, 1 on mobile.
+   Each card uses flexbox (flex-direction: column) so the
+   "Read More" link always sits at the bottom regardless of
+   how much text is in the card.
+   
+   MODAL: The article modal uses position: fixed to cover the
+   full screen. It starts with opacity: 0 and pointer-events: none
+   (invisible and unclickable), then the class 'blog-modal--visible'
+   makes it appear with a fade transition.
+   ============================================================ */
 
 .page-hero {
   min-height: 50vh;

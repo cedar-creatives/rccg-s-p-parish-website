@@ -1,6 +1,16 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — prayer.css
-   ============================== */
+   
+   Styles for the Prayer Request page (prayer.html).
+   
+   Layout: 2-column — form on the left, info sidebar on the right.
+   On mobile they stack vertically.
+   
+   The select element (dropdown) gets -webkit-appearance: none
+   and appearance: none to remove the browser's default styling
+   so it matches our custom design consistently across browsers,
+   especially on iOS (Safari).
+   ============================================================ */
 
 .page-hero {
   min-height: 55vh;

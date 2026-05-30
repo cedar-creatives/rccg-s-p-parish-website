@@ -1,6 +1,17 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — volunteer.css
-   ============================== */
+   
+   Styles for the Volunteer/Sign-up page (volunteer.html).
+   
+   Layout:
+   - "Why Serve" cards at the top (4 columns → 2 → 1)
+   - Main layout: form on the left, sidebar on the right
+   
+   The ministry checkboxes use a custom styled label.
+   The :has(input:checked) selector targets a label that
+   contains a checked checkbox — this is a modern CSS feature
+   that lets us style the label based on its child's state.
+   ============================================================ */
 
 .page-hero {
   min-height: 50vh;

@@ -1,8 +1,22 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — give.css
-   Page-specific styles for Give/Donations
-   Requires: css/style.css first
-   ============================== */
+   
+   Styles for the Give/Donations page (give.html).
+   
+   Layout:
+   - Main layout: form on the left, info sidebar on the right
+   - On tablet/mobile, they stack vertically
+   
+   Key components:
+   - Giving type tabs (Tithe, Offering, Seed, Building Fund)
+   - Preset amount buttons (₦500, ₦1000 etc.)
+   - Custom amount input with ₦ symbol overlay
+   - Summary box (shows what you're about to give)
+   - Bank account cards with copy buttons
+   
+   The .give-type-btn and .amount-btn use border and background
+   changes to show which one is selected (.active / .selected).
+   ============================================================ */
 
 /* ===== PAGE HERO ===== */
 .page-hero {

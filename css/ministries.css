@@ -1,6 +1,16 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — ministries.css
-   ============================== */
+   
+   Styles for the Ministries page (ministries.html).
+   
+   The page shows detailed cards for each ministry department.
+   Each card has a coloured header (different colour per ministry)
+   and a white body with description, activities, and meeting time.
+   
+   The header colours use CSS gradients:
+   linear-gradient(135deg, colour1, colour2) creates a diagonal
+   gradient from top-left to bottom-right.
+   ============================================================ */
 
 .page-hero {
   min-height: 55vh;

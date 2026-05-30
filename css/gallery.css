@@ -1,8 +1,25 @@
-/* ==============================
+/* ============================================================
    RCCG S&P Parish — gallery.css
-   Page-specific styles for Gallery
-   Requires: css/style.css first
-   ============================== */
+   
+   Styles for the Gallery page (gallery.html).
+   
+   Key concepts used here:
+   
+   GRID LAYOUT: .gallery-grid uses CSS Grid with 4 columns.
+   On tablet it becomes 3 columns, on mobile 2 columns.
+   
+   ASPECT RATIO: .gallery-thumb uses aspect-ratio: 1/1 to
+   make every photo a perfect square, regardless of the
+   original image dimensions. object-fit: cover fills the
+   square by cropping the image rather than squishing it.
+   
+   LIGHTBOX: The lightbox overlay uses position: fixed to
+   cover the entire screen. z-index: 9000 puts it above
+   everything else on the page.
+   
+   TRANSITIONS: Hover effects use CSS transitions so changes
+   animate smoothly instead of snapping instantly.
+   ============================================================ */
 
 /* ===== PAGE HERO ===== */
 .page-hero {
